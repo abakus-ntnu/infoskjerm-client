@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { func, string } from 'prop-types';
+import { func, object, arrayOf } from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
+import Time from './components/Time/index';
 
 import { fetchEvents } from './Store/modules/events';
 
 class MainComponent extends Component {
   static propTypes = {
     get: func,
-    data: [string],
+    data: arrayOf(object),
   };
 
   static defaultProps = {
@@ -36,6 +37,7 @@ class MainComponent extends Component {
     return (
       <Router>
         <div>
+          <Time />
           {this.renderList()}
           <p>sponset av IDI</p>
         </div>
@@ -49,7 +51,7 @@ class MainComponent extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({ data: state.data });
+const mapStateToProps = state => ({ data: state.data });
 
 const mapDispatchToProps = dispatch => ({
   get: () => dispatch(fetchEvents()),
