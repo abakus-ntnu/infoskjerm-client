@@ -1,8 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchEvents, updateWidget } from './Redux/modules/widgets';
+import { func, string } from 'prop-types';
+import { fetchEvents } from './Store/modules/events';
 
 class MainComponent extends Component {
+  static propTypes = {
+    get: func,
+    data: [string],
+  }
+
+  static defaultProps = {
+    get: () => {},
+    data: [],
+  }
+
   componentDidMount() {
     const { get } = this.props;
     get();
