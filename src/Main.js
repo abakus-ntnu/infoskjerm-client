@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { func, object, arrayOf } from 'prop-types';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Time from './components/Time/index';
-
-import { fetchEvents } from './Store/modules/events';
+import { fetchEvents } from './store/modules/events';
 
 class MainComponent extends Component {
   static propTypes = {
