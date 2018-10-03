@@ -3,7 +3,7 @@ const FETCH_BUS_SUCCESS = 'FETCH_BUS_SUCCESS';
 const FETCH_BUS_FAILURE = 'FETCH_BUS_FAILURE';
 
 
-const reducer = (state = { loading: false, data: [], error: false }, action = {}) => {
+const busReducer = (state = { loading: false, data: [], error: false }, action = {}) => {
   switch (action.type) {
     case FETCH_BUS_BEGIN:
       return Object.assign({}, state, { loading: true });
@@ -16,7 +16,7 @@ const reducer = (state = { loading: false, data: [], error: false }, action = {}
   }
 };
 
-export default reducer;
+export default busReducer;
 
 
 export function fetchBusBegin() {
