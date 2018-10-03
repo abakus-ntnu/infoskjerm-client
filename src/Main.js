@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { func, string } from 'prop-types';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 import { fetchEvents } from './Store/modules/events';
 
 class MainComponent extends Component {
   static propTypes = {
     get: func,
     data: [string],
-  }
+  };
 
   static defaultProps = {
     get: () => {},
     data: [],
-  }
+  };
 
   componentDidMount() {
     const { get } = this.props;
@@ -32,23 +34,30 @@ class MainComponent extends Component {
 
   render() {
     return (
-      <div>
-        {this.renderList()}
-        <p>sponset av IDI</p>
-      </div>
+      <Router>
+        <div>
+          {this.renderList()}
+          <p>sponset av IDI</p>
+        </div>
+        {/*
+        <Route exact path="/" component={Events} />
+        <Route path="/events" component={Events} />
+        <Route path="/buses" component={Buses} />
+        */}
+      </Router>
     );
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log(state);
-  return { data: state.data };
-};
+const mapStateToProps = (state) => ({ data: state.data });
 
 const mapDispatchToProps = dispatch => ({
   get: () => dispatch(fetchEvents()),
 });
 
-const Main = connect(mapStateToProps, mapDispatchToProps)(MainComponent);
+const Main = connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)(MainComponent);
 
 export default Main;
