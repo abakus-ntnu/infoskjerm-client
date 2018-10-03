@@ -33,13 +33,9 @@ class BusComponent extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  return { data: state.data };
-};
+const mapStateToProps = state => { data: state.data };
 
-const mapDispatchToProps = dispatch => ({
-  get: () => dispatch(fetchBus()),
-});
+const mapDispatchToProps = dispatch => {get: () => dispatch(fetchBus())};
 
 const Bus = connect(mapStateToProps, mapDispatchToProps)(BusComponent);
 
