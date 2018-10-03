@@ -1,11 +1,12 @@
 import axios from 'axios';
+import initialState from '../initialState';
 
 const FETCH_EVENTS_BEGIN = 'FETCH_EVENTS_BEGIN';
 const FETCH_EVENTS_SUCCESS = 'FETCH_EVENTS_SUCCESS';
 const FETCH_EVENTS_FAILURE = 'FETCH_EVENTS_FAILURE';
 
 
-const eventsReducer = (state = { loading: false, data: [], error: false }, action = {}) => {
+const eventsReducer = (state = initialState.events, action = {}) => {
   switch (action.type) {
     case FETCH_EVENTS_BEGIN:
       return Object.assign({}, state, { loading: true });

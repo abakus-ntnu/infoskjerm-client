@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { func, string } from 'prop-types';
+import { func, object, arrayOf } from 'prop-types';
 import { fetchEvents } from '../store/modules/events';
 
 class EventsComponent extends Component {
   static propTypes = {
     get: func,
-    data: [string],
+    data: arrayOf(object),
   }
 
   static defaultProps = {
@@ -39,7 +39,7 @@ class EventsComponent extends Component {
   }
 }
 
-const mapStateToProps = state => ({ data: state.data });
+const mapStateToProps = state => ({ data: state.events.data });
 
 const mapDispatchToProps = dispatch => ({
   get: () => dispatch(fetchEvents()),

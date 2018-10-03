@@ -1,19 +1,13 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import eventsReducer from './modules/events';
-import busReducer from './modules/bus';
+
+import initialState from './initialState';
+import reducer from './modules';
 
 export default function configureStore() {
   return createStore(
     reducer,
-    { loading: false, data: [], error: false },
+    initialState,
     applyMiddleware(thunk),
   );
-}
-
-const reducer = (state = {bus: {}, events: {}}, action = {}) => {
-  return { 
-    bus: busReducer(state.bus),
-    events: eventReducer(state.events)
-  }
 }
