@@ -1,8 +1,19 @@
-import React, { Component } from 'react';
+import { Component } from 'react';
+import { bool } from 'prop-types';
 
 class Time extends Component {
   state = {
     date: new Date(),
+  };
+
+  static propTypes = {
+    displayTime: bool,
+    displayDate: bool,
+  };
+
+  static defaultProps = {
+    displayTime: false,
+    displayDate: false,
   };
 
   timer = null;
@@ -17,9 +28,18 @@ class Time extends Component {
 
   tick = () => this.setState({ date: new Date() });
 
+  formatTime = (dateObject) => {
+    const { displayDate, displayTime } = this.props;
+    let dateString = '';
+    if (displayDate) dateString += dateObject.toLocaleDateString();
+    if (displayDate && displayTime) dateString += ' ';
+    if (displayTime) dateString += dateObject.toLocaleTimeString();
+    return dateString;
+  };
+
   render() {
     const { date } = this.state;
-    return <div>{date.toLocaleTimeString()}</div>;
+    return this.formatTime(date);
   }
 }
 

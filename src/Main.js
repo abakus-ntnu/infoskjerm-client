@@ -37,7 +37,7 @@ class MainComponent extends Component {
     return (
       <Router>
         <div>
-          <Time />
+          <Time displayTime displayDate />
           {this.renderList()}
           <p>sponset av IDI</p>
         </div>
