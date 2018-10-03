@@ -1,30 +1,41 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateWidget } from './Redux/modules/widgets';
+import { fetchEvents, updateWidget } from './Redux/modules/widgets';
 
 class MainComponent extends Component {
-  handleChange = (event) => {
-    const { update } = this.props;
-    update(event.target.value);
+  componentDidMount() {
+    const { get } = this.props;
+    get();
+  }
+
+  renderList() {
+    const { data } = this.props;
+    return data.map(event => (
+      <div key={event.id}>
+        <h3>{event.title}</h3>
+        <h4>{event.description}</h4>
+        <img src={event.cover} width="300" height="120" alt="Cover" />
+      </div>
+    ));
   }
 
   render() {
-    const { title } = this.props;
     return (
       <div>
-          {title}
-        <input type="text" name="title" value={title} onChange={this.handleChange} />
+        {this.renderList()}
+        <p>sponset av IDI</p>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => ({ title: state.input });
+const mapStateToProps = (state) => {
+  console.log(state);
+  return { data: state.data };
+};
 
 const mapDispatchToProps = dispatch => ({
-  update: (title) => {
-    dispatch({ type: 'UPDATE', widget: title });
-  },
+  get: () => dispatch(fetchEvents()),
 });
 
 const Main = connect(mapStateToProps, mapDispatchToProps)(MainComponent);

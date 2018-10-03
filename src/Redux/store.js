@@ -5,7 +5,7 @@ import reducer from './modules/widgets';
 export default function configureStore() {
   return createStore(
     reducer,
-    { input: ' ' },
+    { loading: false, data: [], error: false },
     applyMiddleware(thunk),
   );
 }
