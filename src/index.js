@@ -1,8 +1,8 @@
 import 'babel-polyfill';
 import React from 'react';
 import ReactDom from 'react-dom';
-import Main from './Main';
 import { Provider } from 'react-redux';
+import Main from './Main';
 import configureStore from './Store/index';
 
 const store = configureStore();
