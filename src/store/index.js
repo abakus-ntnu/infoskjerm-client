@@ -1,11 +1,13 @@
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import reducer from './modules/events';
+
+import initialState from './initialState';
+import reducer from './modules';
 
 export default function configureStore() {
   return createStore(
     reducer,
-    { loading: false, data: [], error: false },
+    initialState,
     applyMiddleware(thunk),
   );
 }
