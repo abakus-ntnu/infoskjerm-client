@@ -9,15 +9,15 @@ class Main extends Component {
     return (
       <Router>
         <div>
-          <Time displayTime displayDate />
-          {this.renderList()}
-          <p>sponset av IDI</p>
-        </div>
-        <Route exact path="/" component={Events} />
-        {/*
+          <div>
+            <Time displayTime displayDate />
+          </div>
+          <Route exact path="/" redirect="/events" component={Events} />
+          {/*
           <Route path="/events" component={Events} />
           <Route path="/buses" component={Buses} />
           */}
+        </div>
       </Router>
     );
   }
