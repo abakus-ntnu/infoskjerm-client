@@ -21,7 +21,9 @@ class BusComponent extends Component {
 
   renderList() {
     const { data } = this.props;
-    // Add displayed data
+    <div>
+      <busList departureList=data/>
+    </div>
   }
 
   render() {

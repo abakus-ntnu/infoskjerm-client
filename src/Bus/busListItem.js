@@ -15,6 +15,3 @@ class busListItem extends Component{
 		return this.list_render()
 	}
 }
-
-
-const busAPI_eksempel = {busNr: "", stopp: "", tid: "", endeStopp: ""}
