@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import busListItem from 'busListItem';
+import { object, arrayOf } from 'prop-types';
 
-class BusList extends Component{
 
-
-  render_list(){
-      <div>
-        <busListItem busNR =
-      </div>
+class busList extends Component {
+  static propTypes = {
+    departureList: arrayOf(object);
   }
 
-  render(){
-    return this.render_list();
+  static defaultProps = {
+    departureList: [],
+  }
+
+  render() {
+    const { departureList } = this.props;
+    return (
+      <div>
+        {departureList.map(departure => <busListItem line={departure.line} destination={departure.destination} timeToDeparture={departure.timeToDeparture} isRealTime={departure.isRealTime} />)}
+      </div>
+    );
   }
 }
+
+export default busList;
