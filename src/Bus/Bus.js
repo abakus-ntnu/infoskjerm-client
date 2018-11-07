@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { func, string } from 'prop-types';
-import { fetchBus } from './store/modules/bus'
+import {
+  func, shape,
+} from 'prop-types';
+import BusList from './BusList';
+import { fetchBus } from '../store/modules/bus';
 
 class BusComponent extends Component {
   static propTypes = {
     get: func,
-    data: [string],
+    data: shape(),
   }
 
   static defaultProps = {
@@ -14,16 +17,34 @@ class BusComponent extends Component {
     data: [],
   }
 
-  componentDidMount() {
+  componentDidMount() { /*
     const { get } = this.props;
     get();
+    */
   }
 
   renderList() {
+    console.log(this.props);
     const { data } = this.props;
-    <div>
-      <busList departureList=data/>
-    </div>
+    console.log(data);
+    return (
+      <div>
+        <div>
+          <h1>Til Byen</h1>
+          <h2>Gløshaugen</h2>
+          <BusList departureList={data.from.glos} />
+          <h2>Prof. Brochs Gate</h2>
+          <BusList departureList={data.from.prof} />
+        </div>
+        <div>
+          <h1>Fra Byen</h1>
+          <h2>Gløshaugen</h2>
+          <BusList departureList={data.to.glos} />
+          <h2>Prof. Brochs Gate</h2>
+          <BusList departureList={data.to.prof} />
+        </div>
+      </div>
+    );
   }
 
   render() {
@@ -35,9 +56,9 @@ class BusComponent extends Component {
   }
 }
 
-const mapStateToProps = state => { data: state.data };
+const mapStateToProps = state => ({ data: state.bus.data });
 
-const mapDispatchToProps = dispatch => {get: () => dispatch(fetchBus())};
+const mapDispatchToProps = dispatch => ({ get: () => dispatch(fetchBus()) });
 
 const Bus = connect(mapStateToProps, mapDispatchToProps)(BusComponent);
 
