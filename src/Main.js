@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 //import Events from './Events/Events';
 import BusinessEvents from './Events/BusinessEvents';
 import Time from './components/Time/index';
-
+import Bus from './Bus/Bus.js';
 
 class Main extends Component {
   render() {
@@ -13,11 +13,7 @@ class Main extends Component {
           <div>
             <Time displayTime displayDate />
           </div>
-          <Route exact path="/" redirect="/events" component={BusinessEvents} />
-          {/*
-          <Route path="/events" component={Events} />
-          <Route path="/buses" component={Buses} />
-          */}
+          <Bus />
         </div>
       </Router>
     );

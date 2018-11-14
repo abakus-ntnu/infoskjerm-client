@@ -5,6 +5,7 @@ import {
 } from 'prop-types';
 import BusList from './BusList';
 import { fetchBus } from '../store/modules/bus';
+import './bus.css';
 
 class BusComponent extends Component {
   static propTypes = {
@@ -28,20 +29,20 @@ class BusComponent extends Component {
     const { data } = this.props;
     console.log(data);
     return (
-      <div>
-        <div>
+      <div className="full-grid">
+        <div className="bus-column">
           <h1>Til Byen</h1>
           <h2>Gløshaugen</h2>
-          <BusList departureList={data.from.glos} />
+          <busList departureList={data.to.glos} />
           <h2>Prof. Brochs Gate</h2>
-          <BusList departureList={data.from.prof} />
+          <busList departureList={data.to.prof} />
         </div>
-        <div>
+        <div className="bus-column">
           <h1>Fra Byen</h1>
           <h2>Gløshaugen</h2>
-          <BusList departureList={data.to.glos} />
+          <busList departureList={data.from.glos} />
           <h2>Prof. Brochs Gate</h2>
-          <BusList departureList={data.to.prof} />
+          <busList departureList={data.from.prof} />
         </div>
       </div>
     );
