@@ -6,7 +6,7 @@ const initialState = {
   },
   events: {
     loading: false,
-    data: { to: { glos: [], prof: [] }, from: { glos: [], prof: [] } },
+    data: [],
     error: false,
   },
 };

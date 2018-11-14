@@ -3,6 +3,7 @@ import { func, object, arrayOf } from 'prop-types';
 import EventList from './EventList';
 import { connect } from 'react-redux';
 import { fetchEvents } from '../store/modules/events';
+import './BusinessEvents.css';
 
 
 class BusinessEventsComponent extends Component {

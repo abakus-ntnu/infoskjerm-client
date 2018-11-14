@@ -1,0 +1,27 @@
+body {
+    background-color: rgb(221, 211, 203);
+    line-height: 1.8;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.header {
+    color:#000;
+    text-transform: uppercase;
+    padding: 1px;
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    height: 20px;
+}
+
+.header2 {
+    color:rgb(48, 48, 48);
+    text-transform: uppercase;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: 200;
+    letter-spacing: 1px; 
+    height: 5px;
+}
+
+ 

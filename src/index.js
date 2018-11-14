@@ -11,7 +11,7 @@ const store = configureStore();
 const App = () => {
   ReactDom.render(
     <Provider store={store}>
-      <Bus />
+      <Main />
     </Provider>,
     document.getElementById('root'),
   );

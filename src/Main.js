@@ -13,7 +13,7 @@ class Main extends Component {
           <div>
             <Time displayTime displayDate />
           </div>
-          <Bus />
+          <BusinessEvents />
         </div>
       </Router>
     );

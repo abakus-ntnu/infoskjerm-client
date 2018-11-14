@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { object, arrayOf } from 'prop-types';
+import './BusinessEvents.css';
+
 
 class EventListItem extends Component {
     static propTypes = {
@@ -15,10 +17,10 @@ class EventListItem extends Component {
       return (
         <div>
           <img src={data.cover} width="150" height="60" alt="Cover" />
-          <h1>
+          <h1 className="header">
             {data.title}
           </h1>
-          <h2>
+          <h2 className="header2">
             {data.startTime}
           </h2>
         </div>
