@@ -1,3 +1,5 @@
+import axios from 'axios';
+
 const FETCH_BUS_BEGIN = 'FETCH_BUS_BEGIN';
 const FETCH_BUS_SUCCESS = 'FETCH_BUS_SUCCESS';
 const FETCH_BUS_FAILURE = 'FETCH_BUS_FAILURE';
@@ -35,7 +37,7 @@ export function fetchBusFailure(error) {
 export function fetchBus() {
   return (dispatch) => {
     dispatch(fetchBusBegin());
-    axios.get('https://jowies.com/api/events')  // Should be URL to bus-api
+    axios.get('http://infoskjerm-api.koskom.no/bus')  // Should be URL to bus-api
       .then((response) => {
         dispatch(fetchBusSuccess(response.data));
       })
