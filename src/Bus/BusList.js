@@ -17,7 +17,16 @@ class BusList extends Component {
     const { departureList } = this.props;
     return (
       <div>
-        {departureList.map(departure => <BusListItem line={departure.line} destination={departure.destination} timeToDeparture={departure.timeToDeparture} isRealTime={departure.isRealTime} />)}
+        {departureList.map(
+          departure => (
+            <BusListItem
+              line={departure.line}
+              destination={departure.destination}
+              timeToDeparture={departure.timeToDeparture}
+              isRealTime={departure.isRealTime}
+            />
+          ),
+        )}
       </div>
     );
   }
