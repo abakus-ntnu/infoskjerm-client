@@ -3,7 +3,6 @@
 ssh -tt $1@$2 <<EOF
  cd ~/infoskjerm-client
  git pull
- npm install
- npm run build
+ npm install && npm run build
  exit
 EOF 
