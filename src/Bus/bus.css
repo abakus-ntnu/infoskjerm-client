@@ -1,0 +1,78 @@
+.bus-tb{ 
+  grid-area: tb-header;
+  text-align: center;
+}
+
+.bus-fb { 
+  grid-area: fb-header;
+  text-align: center;
+}
+
+.bus-tb-g { 
+  grid-area: tb-glos;
+  margin-left: 15px;
+}
+.bus-tb-p{ 
+  grid-area: tb-prof;
+  margin-left: 15px;
+ }
+.bus-fb-g { 
+  grid-area: fb-glos;
+  margin-left: 15px;
+ }
+.bus-fb-p{ 
+  grid-area: fb-prof;
+  margin-left: 15px;
+ }
+.fb-g{ grid-area: tid-fb-g}
+.fb-p{ grid-area: tid-fb-p}
+.tb-g{ grid-area: tid-tb-g}
+.tb-p{ grid-area: tid-tb-p}
+
+.full-grid {
+  display: grid;
+  background-color: white;
+  padding: 5px;
+  grid-gap: 10px 200px;
+  grid-template-areas: 
+  'tb-header fb-header'
+  'tb-glos fb-glos'
+  'tid-tb-g tid-fb-g'
+  'tb-prof  fb-prof'
+  'tid-tb-p tid-fb-p';
+}
+  .list-item{
+  margin-top: 2px;
+  background-color: grey;
+  width: 97%;
+  opacity: 0.6;
+  display: flex;
+  padding: 5px;
+}
+
+.list-item > span{
+  margin: 5px;
+  padding: 5px;
+  font-size: 20px;
+  text-align: left;
+  color: black;
+}
+.line{
+  margin-left:5px;
+  font-style: bold;
+  width: 10%;
+  text-align: centre;
+
+}
+.destination{
+  margin-left: 15px;
+  width: 50%;
+  text-align: centre;
+
+}
+.time-to-departure{
+  text-align: right;
+  width: 40%;
+  text-align: centre;
+
+}

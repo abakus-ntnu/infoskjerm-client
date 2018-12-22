@@ -5,6 +5,7 @@ import {
 } from 'prop-types';
 import BusList from './BusList';
 import { fetchBus } from '../store/modules/bus';
+import './bus.css';
 
 class BusComponent extends Component {
   static propTypes = {
@@ -13,14 +14,13 @@ class BusComponent extends Component {
   }
 
   static defaultProps = {
-    get: () => {},
+    get: () => { },
     data: [],
   }
 
-  componentDidMount() { /*
+  componentDidMount() {
     const { get } = this.props;
     get();
-    */
   }
 
   renderList() {
@@ -28,21 +28,18 @@ class BusComponent extends Component {
     const { data } = this.props;
     console.log(data);
     return (
-      <div>
-        <div>
-          <h1>Til Byen</h1>
-          <h2>Gløshaugen</h2>
-          <BusList departureList={data.from.glos} />
-          <h2>Prof. Brochs Gate</h2>
-          <BusList departureList={data.from.prof} />
-        </div>
-        <div>
-          <h1>Fra Byen</h1>
-          <h2>Gløshaugen</h2>
-          <BusList departureList={data.to.glos} />
-          <h2>Prof. Brochs Gate</h2>
-          <BusList departureList={data.to.prof} />
-        </div>
+
+      <div className="full-grid">
+        <h1 className="bus-tb">Til Byen</h1>
+        <h2 className="bus-tb-g">Gløshaugen</h2>
+        <BusList departureList={data.to.glos} className="tb-g" />
+        <h2 className="bus-tb-p">Prof. Brochs Gate</h2>
+        <BusList departureList={data.to.prof} className="tb-p" />
+        <h1 className="bus-fb">Fra Byen</h1>
+        <h2 className="bus-fb-g">Gløshaugen</h2>
+        <BusList departureList={data.from.glos} className="fb-g" />
+        <h2 className="bus-fb-p">Prof. Brochs Gate</h2>
+        <BusList departureList={data.from.prof} className="fb-p" />
       </div>
     );
   }
