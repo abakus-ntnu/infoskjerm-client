@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { number, String } from 'prop-types';
+import { String } from 'prop-types';
 import './bus.css';
 
 
