@@ -18,11 +18,12 @@ class BusList extends Component {
     return (
       <div>
         {departureList.map(
-          departure => (
+          (departure, index) => (
             <BusListItem
+              key={index}
               line={departure.line}
               destination={departure.destination}
-              timeToDeparture={departure.timeToDeparture}
+              timeUntilDeparture={departure.timeUntilDeparture}
               isRealTime={departure.isRealTime}
             />
           ),

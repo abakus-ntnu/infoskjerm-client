@@ -26,7 +26,6 @@ class BusComponent extends Component {
   renderList() {
     console.log(this.props);
     const { data } = this.props;
-    console.log(data);
     return (
 
       <div className="full-grid">

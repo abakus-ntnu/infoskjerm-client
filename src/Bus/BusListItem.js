@@ -6,24 +6,26 @@ import './bus.css';
 
 class BusListItem extends Component {
   static propTypes = {
-    line: number,
+    line: String,
     destination: String,
-    timeToDeparture: number,
+    timeUntilDeparture: String,
   }
 
   static defaultProps = {
-    line: 0,
+    line: '',
     destination: '',
-    timeToDeparture: 0,
+    timeUntilDeparture: 0,
   }
 
   render() {
-    const { line, destination, timeToDeparture } = this.props;
+    const {
+      line, destination, timeUntilDeparture,
+    } = this.props;
     return (
-      <div className="list-item">
+      <div className="list-item" key={this.key}>
         <span className="line">{line}</span>
         <span className="destination">{destination}</span>
-        <span className="time-to-departure">{timeToDeparture}</span>
+        <span className="time-to-departure">{timeUntilDeparture}</span>
       </div>
     );
   }
