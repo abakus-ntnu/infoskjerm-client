@@ -38,7 +38,7 @@ class Time extends Component {
       dateString += ' ';
     }
     if (displayTime) {
-      dateString += dateObject.toLocaleTimeString();
+      dateString += dateObject.toLocaleTimeString({ hourCycle: 'h24' });
       dateString = dateString.substring(0, dateString.length - 2);
       // Remove the "am" or "pm" from the time string.
     }
