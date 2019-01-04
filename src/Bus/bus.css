@@ -1,6 +1,6 @@
 .bus-tb{ 
   grid-area: tb-header;
-  text-align: center;
+  text-align: center; 
 }
 
 .bus-fb { 
@@ -48,6 +48,7 @@
   opacity: 0.6;
   display: flex;
   padding: 5px;
+  justify-content: flex-end;
 }
 
 .list-item > span{
