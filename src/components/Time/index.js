@@ -40,6 +40,7 @@ class Time extends Component {
     if (displayTime) {
       dateString += dateObject.toLocaleTimeString();
       dateString = dateString.substring(0, dateString.length - 2);
+      // Remove the "am" or "pm" from the time string.
     }
     return dateString;
   };
