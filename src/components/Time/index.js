@@ -31,9 +31,16 @@ class Time extends Component {
   formatTime = (dateObject) => {
     const { displayDate, displayTime } = this.props;
     let dateString = '';
-    if (displayDate) dateString += dateObject.toLocaleDateString();
-    if (displayDate && displayTime) dateString += ' ';
-    if (displayTime) dateString += dateObject.toLocaleTimeString();
+    if (displayDate) {
+      dateString += dateObject.toLocaleDateString();
+    }
+    if (displayDate && displayTime) {
+      dateString += ' ';
+    }
+    if (displayTime) {
+      dateString += dateObject.toLocaleTimeString();
+      dateString = dateString.substring(0, dateString.length - 2);
+    }
     return dateString;
   };
 
