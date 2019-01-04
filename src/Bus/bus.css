@@ -1,33 +1,33 @@
 .bus-til-byen{ 
-  grid-area: til-byn-header;
+  grid-area: til-byen-header;
   text-align: center;
 }
 
 .bus-fra-byen { 
-  grid-area: fra-byn-header;
+  grid-area: fra-byen-header;
   text-align: center;
 }
 
 .bus-til-byen-glos { 
-  grid-area: til-byn-glos;
+  grid-area: til-byen-glos;
   margin-left: 15px;
 }
 .bus-til-byen-prof{ 
-  grid-area: til-byn-prof;
+  grid-area: til-byen-prof;
   margin-left: 15px;
  }
 .bus-fra-byen-glos { 
-  grid-area: fra-byn-glos;
+  grid-area: fra-byen-glos;
   margin-left: 15px;
  }
 .bus-fra-byen-prof{ 
-  grid-area: fra-byn-prof;
+  grid-area: fra-byen-prof;
   margin-left: 15px;
  }
-.fra-byen-glos{ grid-area: tid-fra-byn-glos}
-.fra-byen-prof{ grid-area: tid-fra-byn-prof}
-.til-byen-glos{ grid-area: tid-til-byn-glos}
-.til-byen-prof{ grid-area: tid-til-byn-prof}
+.fra-byen-glos{ grid-area: tid-fra-byen-glos}
+.fra-byen-prof{ grid-area: tid-fra-byen-prof}
+.til-byen-glos{ grid-area: tid-til-byen-glos}
+.til-byen-prof{ grid-area: tid-til-byen-prof}
 
 .full-grid {
   display: grid;
@@ -35,11 +35,11 @@
   padding: 5px;
   grid-gap: 10px 200px;
   grid-template-areas: 
-  'til-byn-header fra-byn-header'
-  'til-byn-glos fra-byn-glos'
-  'tid-til-byn-glos tid-fra-byn-glos'
-  'til-byn-prof  fra-byn-prof'
-  'tid-til-byn-prof tid-fra-byn-prof';
+  'til-byen-header fra-byen-header'
+  'til-byen-glos fra-byen-glos'
+  'tid-til-byen-glos tid-fra-byen-glos'
+  'til-byen-prof  fra-byen-prof'
+  'tid-til-byen-prof tid-fra-byen-prof';
 }
   .list-item{
   margin-top: 2px;
