@@ -1,5 +1,6 @@
-import { Component } from 'react';
+import { Component, React } from 'react';
 import { bool } from 'prop-types';
+import './Time.css';
 
 class Time extends Component {
   state = {
@@ -46,7 +47,11 @@ class Time extends Component {
 
   render() {
     const { date } = this.state;
-    return this.formatTime(date);
+    return (
+      <span>
+        {this.formatTime(date)}
+      </span>
+    );
   }
 }
 
