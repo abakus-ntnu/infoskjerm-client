@@ -29,16 +29,16 @@ class BusComponent extends Component {
     return (
 
       <div className="full-grid">
-        <h1 className="bus-tb">Til Byen</h1>
-        <h2 className="bus-tb-g">Gløshaugen</h2>
-        <BusList departureList={data.to.glos} className="tb-g" />
-        <h2 className="bus-tb-p">Prof. Brochs Gate</h2>
-        <BusList departureList={data.to.prof} className="tb-p" />
-        <h1 className="bus-fb">Fra Byen</h1>
-        <h2 className="bus-fb-g">Gløshaugen</h2>
-        <BusList departureList={data.from.glos} className="fb-g" />
-        <h2 className="bus-fb-p">Prof. Brochs Gate</h2>
-        <BusList departureList={data.from.prof} className="fb-p" />
+        <h1 className="bus-til-byn">Til Byen</h1>
+        <h2 className="bus-til-byn-glos">Gløshaugen</h2>
+        <BusList departureList={data.to.glos} className="til-byn-glos" />
+        <h2 className="bus-til-byn-prof">Prof. Brochs Gate</h2>
+        <BusList departureList={data.to.prof} className="til-byn-prof" />
+        <h1 className="bus-fra-byn">Fra Byen</h1>
+        <h2 className="bus-fra-byn-glos">Gløshaugen</h2>
+        <BusList departureList={data.from.glos} className="fra-byn-glos" />
+        <h2 className="bus-fra-byn-prof">Prof. Brochs Gate</h2>
+        <BusList departureList={data.from.prof} className="fra-byn-prof" />
       </div>
     );
   }
