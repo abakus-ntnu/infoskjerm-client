@@ -11,13 +11,6 @@ class BusListItem extends Component {
     timeUntilDeparture: string.isRequired,
   }
 
-  /*
-  static defaultProps = {
-    line: '',
-    destination: '',
-    timeUntilDeparture: 0,
-  }
-*/
   render() {
     const {
       line, destination, timeUntilDeparture,
