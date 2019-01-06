@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import { bool } from 'prop-types';
 
 class Time extends Component {
@@ -38,16 +38,41 @@ class Time extends Component {
       dateString += ' ';
     }
     if (displayTime) {
-      dateString += dateObject.toLocaleTimeString({ hourCycle: 'h24' });
-      dateString = dateString.substring(0, dateString.length - 2);
-      // The above removes the "am" or "pm" from the time string.
+      dateString += this.dateToFormattedClock(dateObject);
     }
     return dateString;
   };
 
+  dateToFormattedClock = (date) => {
+    let timeString = '';
+    timeString += `${this.dateToFormattedHours(date)}:`;
+    timeString += `${this.dateToFormattedMinutes(date)}:`;
+    timeString += this.dateToFormattedSeconds(date);
+    return timeString;
+  }
+
+  dateToFormattedHours = (date) => {
+    const hours = date.getHours();
+    return hours.toString().length <= 1 ? `0${hours}` : hours;
+  };
+
+  dateToFormattedMinutes = (date) => {
+    const minutes = date.getMinutes();
+    return minutes.toString().length <= 1 ? `0${minutes}` : minutes;
+  };
+
+  dateToFormattedSeconds = (date) => {
+    const seconds = date.getSeconds();
+    return seconds.toString().length <= 1 ? `0${seconds}` : seconds;
+  };
+
   render() {
     const { date } = this.state;
-    return this.formatTime(date);
+    return (
+      <span id="clock">
+        {this.formatTime(date)}
+      </span>
+    );
   }
 }
 
