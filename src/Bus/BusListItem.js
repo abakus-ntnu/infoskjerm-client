@@ -1,22 +1,23 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
-import { String } from 'prop-types';
+import { string } from 'prop-types';
 import './bus.css';
 
 
 class BusListItem extends Component {
   static propTypes = {
-    line: String,
-    destination: String,
-    timeUntilDeparture: String,
+    line: string.isRequired,
+    destination: string.isRequired,
+    timeUntilDeparture: string.isRequired,
   }
 
+  /*
   static defaultProps = {
     line: '',
     destination: '',
     timeUntilDeparture: 0,
   }
-
+*/
   render() {
     const {
       line, destination, timeUntilDeparture,

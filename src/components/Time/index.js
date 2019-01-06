@@ -1,4 +1,4 @@
-import { Component, React } from 'react';
+import React, { Component } from 'react';
 import { bool } from 'prop-types';
 import './Time.css';
 
