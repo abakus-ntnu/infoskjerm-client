@@ -31,9 +31,17 @@ class Time extends Component {
   formatTime = (dateObject) => {
     const { displayDate, displayTime } = this.props;
     let dateString = '';
-    if (displayDate) dateString += dateObject.toLocaleDateString();
-    if (displayDate && displayTime) dateString += ' ';
-    if (displayTime) dateString += dateObject.toLocaleTimeString();
+    if (displayDate) {
+      dateString += dateObject.toLocaleDateString();
+    }
+    if (displayDate && displayTime) {
+      dateString += ' ';
+    }
+    if (displayTime) {
+      dateString += dateObject.toLocaleTimeString({ hourCycle: 'h24' });
+      dateString = dateString.substring(0, dateString.length - 2);
+      // Remove the "am" or "pm" from the time string.
+    }
     return dateString;
   };
 
