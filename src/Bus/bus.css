@@ -12,18 +12,22 @@
   grid-area: til-byen-glos;
   margin-left: 15px;
 }
+
 .bus-til-byen-fra-prof{ 
   grid-area: til-byen-prof;
   margin-left: 15px;
  }
+
 .bus-til-glos-fra-byen { 
   grid-area: fra-byen-glos;
   margin-left: 15px;
  }
+
 .bus-til-prof-fra-byen{ 
   grid-area: fra-byen-prof;
   margin-left: 15px;
  }
+ 
 .fra-byen-glos{ grid-area: tid-fra-byen-til-glos}
 .fra-byen-prof{ grid-area: tid-fra-byen-til-prof}
 .til-byen-glos{ grid-area: tid-til-byen-fra-glos}
@@ -41,6 +45,7 @@
   'til-byen-prof  fra-byen-prof'
   'tid-til-byen-fra-prof tid-fra-byen-til-prof';
 }
+
   .list-item{
   margin-top: 2px;
   background-color: grey;
@@ -58,19 +63,21 @@
   text-align: left;
   color: black;
 }
+
 .line{
   margin-left:5px;
   font-style: bold;
   width: 10%;
   text-align: centre;
-
 }
+
 .destination{
   margin-left: 15px;
   width: 50%;
   text-align: centre;
 
 }
+
 .time-to-departure{
   text-align: right;
   width: 40%;
