@@ -31,14 +31,14 @@ class BusComponent extends Component {
       <div className="full-grid">
         <h1 className="bus-til-byen">Til Byen</h1>
         <h2 className="bus-til-byen-fra-glos">Gløshaugen</h2>
-        <BusList departureList={data.to.glos} className="til-byen-glos" />
+        <BusList departureList={data.to.glos} className="til-byen-fra-glos" />
         <h2 className="bus-til-byen-fra-prof">Prof. Brochs Gate</h2>
-        <BusList departureList={data.to.prof} className="til-byen-prof" />
+        <BusList departureList={data.to.prof} className="til-byen-fra-prof" />
         <h1 className="bus-fra-byen">Fra Byen</h1>
         <h2 className="bus-til-glos-fra-byen">Gløshaugen</h2>
-        <BusList departureList={data.from.glos} className="fra-byen-glos" />
+        <BusList departureList={data.from.glos} className="fra-byen-til-glos" />
         <h2 className="bus-til-prof-fra-byen">Prof. Brochs Gate</h2>
-        <BusList departureList={data.from.prof} className="fra-byen-prof" />
+        <BusList departureList={data.from.prof} className="fra-byen-til-prof" />
       </div>
     );
   }
