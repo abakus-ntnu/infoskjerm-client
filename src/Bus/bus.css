@@ -38,15 +38,15 @@
   background-color: white;
   padding: 5px;
   grid-gap: 10px 200px;
-  grid-template-areas: 
+  grid-template-areas:
   'til-byen-header fra-byen-header'
   'til-byen-fra-glos fra-byen-til-glos'
-  'tid-til-byen-fra-glos tid-til-byen-fra-prof '
-  'til-byen-fra-prof  fra-byen-til-prof'
-  'tid-fra-byen-til-glos tid-fra-byen-til-prof';
+  'tid-til-byen-fra-glos tid-til-byen-fra-glos'
+  'til-byen-fra-prof fra-byen-til-prof'
+  'tid-fra-byen-til-glos tid-til-byen-fra-prof';
 }
 
-  .list-item{
+.list-item{
   margin-top: 2px;
   background-color: grey;
   width: 97%;
