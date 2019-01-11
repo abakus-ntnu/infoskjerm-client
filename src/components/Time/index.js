@@ -33,7 +33,7 @@ class Time extends Component {
     const { displayDate, displayTime } = this.props;
     let dateString = '';
     if (displayDate) {
-      dateString += dateObject.toLocaleDateString();
+      dateString += this.dateToFormattedDate(dateObject);
     }
     if (displayDate && displayTime) {
       dateString += ' ';
@@ -67,8 +67,8 @@ class Time extends Component {
     return seconds.toString().length <= 1 ? `0${seconds}` : seconds;
   };
 
-  formatDate = (date) => {
-    const formattedDate = '';
+  dateToFormattedDate = (date) => {
+    const formattedDate = `${date.getDate()}. ${this.dateToMonth(date)}`;
     return formattedDate;
   }
 
@@ -80,9 +80,14 @@ class Time extends Component {
   render() {
     const { date } = this.state;
     return (
-      <span id="clock">
-        {this.formatTime(date)}
-      </span>
+      <div id="trapezoid-shape">
+        <span id="date">
+          {this.dateToFormattedDate(date)}
+        </span>
+        <span id="time">
+          {this.dateToFormattedClock(date)}
+        </span>
+      </div>
     );
   }
 }
