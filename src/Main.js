@@ -9,7 +9,7 @@ class Main extends Component {
     return (
       <Router>
         <div>
-          <Time displayTime />
+          <Time displayTime displayDate />
           {/*
           <Route exact path="/" component={() => <Redirect to="/events" />} />
           <Route path="/events" component={Events} />

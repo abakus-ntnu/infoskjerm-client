@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '/busListItem.css';
+import './busListItem.css';
 
 class busListItem extends Component {
   list_render() {

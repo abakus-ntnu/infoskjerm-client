@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { bool } from 'prop-types';
+import './Time.css';
 
 class Time extends Component {
   state = {
@@ -65,6 +66,16 @@ class Time extends Component {
     const seconds = date.getSeconds();
     return seconds.toString().length <= 1 ? `0${seconds}` : seconds;
   };
+
+  formatDate = (date) => {
+    const formattedDate = '';
+    return formattedDate;
+  }
+
+  dateToMonth = (date) => {
+    const months = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'];
+    return months[date.getMonth()];
+  }
 
   render() {
     const { date } = this.state;
