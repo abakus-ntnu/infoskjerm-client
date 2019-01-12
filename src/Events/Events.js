@@ -4,7 +4,7 @@ import { func, object, arrayOf } from 'prop-types';
 import { fetchEvents } from '../store/modules/events';
 
 // eventType = "social", "party", "event", "other"
-//"company_presentation", "course", "KID_event", "lunch_presentation"
+// "company_presentation", "course", "KID_event", "lunch_presentation"
 
 
 class EventsComponent extends Component {
@@ -17,17 +17,19 @@ class EventsComponent extends Component {
     get: () => {},
     data: [],
   }
-  getBusinessEvents(data){
-    const list = data.filter(event => event.eventType == "company_presentation"|| event.eventType ==  "course"|| event.eventType == "KID_event"|| event.eventType == "lunch_presentation");
-    return( 
-      list.slice(0,4);
-      );
+
+  getBusinessEvents(data) {
+    const list = data.filter(event => event.eventType == 'company_presentation' || event.eventType == 'course' || event.eventType == 'KID_event' || event.eventType == 'lunch_presentation');
+    return (
+      list.slice(0, 4)
+    );
   }
-  getPartyEvents(data){
-    const list = data.filter(event => event.eventType == "social" || event.eventType == "party" || event.eventType == "event" || event.eventType == "other");
-    return(
-      list.slice(0,2);
-    )
+
+  getPartyEvents(data) {
+    const list = data.filter(event => event.eventType == 'social' || event.eventType == 'party' || event.eventType == 'event' || event.eventType == 'other');
+    return (
+      list.slice(0, 2)
+    );
   }
 
   componentDidMount() {

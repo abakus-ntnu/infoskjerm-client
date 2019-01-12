@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { func, object, arrayOf } from 'prop-types';
-import EventList from './EventList';
 import { connect } from 'react-redux';
+import EventList from './EventList';
 import { fetchEvents } from '../store/modules/events';
 
 
@@ -22,9 +22,9 @@ class BusinessEventsComponent extends Component {
   }
 
 
-
   render() {
-    const events = getBusinessEvents(this.props.data);
+    const { data } = this.props;
+    const events = getBusinessEvents(data);
     return (
       <div>
         <EventList data={events.length < 2 ? events : events.slice(0, 2)} />
