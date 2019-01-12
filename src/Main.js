@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-// import Events from './Events/Events';
-// import BusinessEvents from './Events/BusinessEvents';
 import Time from './components/Time/index';
 import Bus from './Bus/Bus';
+import Events from './Events/Events';
 
 class Main extends Component {
   render() {
@@ -11,9 +10,12 @@ class Main extends Component {
       <Router>
         <div>
           <div>
-            <Time id="clock" displayTime />
+            <Time displayTime />
           </div>
           <Bus />
+          <Route exact path="/" component={() => <Redirect to="/events" />} />
+          <Route path="/events" component={Events} />
+          <Route path="/bus" component={Bus} />
         </div>
       </Router>
     );

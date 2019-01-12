@@ -1,0 +1,8 @@
+#!/bin/sh
+
+ssh -tt $1@$2 <<EOF
+ cd ~/infoskjerm-client
+ git pull
+ npm ci && npm run build
+ exit
+EOF 
