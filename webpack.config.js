@@ -12,10 +12,12 @@ module.exports = {
   output: {
     filename: 'scripts/app.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
+    historyApiFallback: true,
   },
   module: {
     rules: [{

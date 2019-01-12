@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { func, string } from 'prop-types';
-import { fetchBus } from './store/modules/bus';
+import { fetchBus } from '../store/modules/bus';
+import './Bus.css';
+
 
 class BusComponent extends Component {
   static propTypes = {

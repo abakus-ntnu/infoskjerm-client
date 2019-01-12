@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import '/busListItem.css';
+import './busListItem.css';
 
 class busListItem extends Component {
   list_render() {
-    <div>
-      <span>{this.props.busItem.busNr}</span>
-      <span>{this.props.busItem.endeStopp}</span>
-      <span>{this.props.busItem.tid}</span>
-    </div>;
+    const { busNr, endeStopp, tid } = this.props.busItem;
+      <div>
+        <span>{busNr}</span>
+        <span>{endeStopp}</span>
+        <span>{tid}</span>
+      </div>;
   }
 
   render() {
