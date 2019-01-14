@@ -13,7 +13,7 @@ class Time extends Component {
   };
 
   static defaultProps = {
-    displayTime: false,
+    displayTime: true,
     displayDate: false,
   };
 
@@ -33,25 +33,61 @@ class Time extends Component {
     const { displayDate, displayTime } = this.props;
     let dateString = '';
     if (displayDate) {
-      dateString += dateObject.toLocaleDateString();
+      dateString += this.dateToFormattedDate(dateObject);
     }
     if (displayDate && displayTime) {
       dateString += ' ';
     }
     if (displayTime) {
-      dateString += dateObject.toLocaleTimeString({ hourCycle: 'h24' });
-      dateString = dateString.substring(0, dateString.length - 2);
-      // Remove the "am" or "pm" from the time string.
+      dateString += this.dateToFormattedClock(dateObject);
     }
     return dateString;
   };
 
+  dateToFormattedClock = (date) => {
+    let timeString = '';
+    timeString += `${this.dateToFormattedHours(date)}:`;
+    timeString += `${this.dateToFormattedMinutes(date)}:`;
+    timeString += this.dateToFormattedSeconds(date);
+    return timeString;
+  }
+
+  dateToFormattedHours = (date) => {
+    const hours = date.getHours();
+    return hours.toString().length <= 1 ? `0${hours}` : hours;
+  };
+
+  dateToFormattedMinutes = (date) => {
+    const minutes = date.getMinutes();
+    return minutes.toString().length <= 1 ? `0${minutes}` : minutes;
+  };
+
+  dateToFormattedSeconds = (date) => {
+    const seconds = date.getSeconds();
+    return seconds.toString().length <= 1 ? `0${seconds}` : seconds;
+  };
+
+  dateToFormattedDate = (date) => {
+    const formattedDate = `${date.getDate()}. ${this.dateToMonth(date)}`;
+    return formattedDate;
+  }
+
+  dateToMonth = (date) => {
+    const months = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'];
+    return months[date.getMonth()];
+  }
+
   render() {
     const { date } = this.state;
     return (
-      <span>
-        {this.formatTime(date)}
-      </span>
+      <div id="trapezoid-shape">
+        <span id="date">
+          {this.dateToFormattedDate(date)}
+        </span>
+        <span id="time">
+          {this.dateToFormattedClock(date)}
+        </span>
+      </div>
     );
   }
 }
