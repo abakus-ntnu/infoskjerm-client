@@ -1,0 +1,26 @@
+#trapezoid-shape {
+  width: 200px;
+  height: 0;
+  text-align: center;
+  display: flex;
+
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  border-top: 80px solid #678686;
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent;
+  position: relative;
+}
+
+
+#time {
+  font-size: 30px;
+  top:0;
+  position: relative;
+}
+
+#date {
+  font-size: 20px;
+  top:0;
+  position: relative;
+}
