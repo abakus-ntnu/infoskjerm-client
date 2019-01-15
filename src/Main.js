@@ -11,7 +11,7 @@ class Main extends Component {
       <Router>
         <div>
           <Time displayTime displayDate />
-          <Route exact path="/" component={() => <Redirect to="/events" />} />
+
           <Route path="/events" component={Events} />
           <Route path="/bus" component={Bus} />
         </div>
