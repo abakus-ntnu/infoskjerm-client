@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import Events from './Events/Events';
-import Time from './components/Time/index';
+import Time from './components/Time';
 import Bus from './Bus/Bus';
 
 
