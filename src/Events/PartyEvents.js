@@ -3,7 +3,7 @@ import { func, object, arrayOf } from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchEvents } from '../store/modules/events';
 
-class PartyEvents extends Compnent {
+class PartyEvents extends Component {
     static propTypes = {
       get: func,
       data: arrayOf(object),
