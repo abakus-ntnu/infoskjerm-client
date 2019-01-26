@@ -21,5 +21,6 @@ module.exports = {
   },
  "rules":{
     "react/jsx-filename-extension": [WARN, { "extensions": [".js", ".jsx"] }],
+    "linebreak-style": ["error", "windows"],
   }
 };
