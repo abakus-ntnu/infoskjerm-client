@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { func, object, arrayOf } from 'prop-types';
 import { fetchEvents } from '../store/modules/events';
 import './Events.css';
+import PromotedEvents from './PromotedEvents';
 
 // eventType = "social", "party", "event", "other"
 // "company_presentation", "course", "KID_event", "lunch_presentation"
@@ -38,6 +39,7 @@ class EventsComponent extends Component {
     get();
   }
 
+  /*
   renderList() {
     const { data } = this.props;
     return data.map(event => (
@@ -46,6 +48,22 @@ class EventsComponent extends Component {
         <h4>{event.description}</h4>
         <img src={event.cover} width="300" height="120" alt="Cover" />
       </div>
+    ));
+  }
+  */
+
+  renderList() {
+    const { data } = this.props;
+    return data.map((event, index) => (
+      <PromotedEvents
+        key={index}
+        cover={event.cover}
+        eventType={event.eventType}
+        location={event.location}
+        startTime={event.startTime}
+        totalCapacity={event.totalCapacity}
+        registered={event.registered}
+      />
     ));
   }
 
