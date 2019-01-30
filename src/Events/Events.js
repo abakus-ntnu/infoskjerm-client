@@ -58,6 +58,7 @@ class EventsComponent extends Component {
       <PromotedEvents
         key={index}
         cover={event.cover}
+        title={event.title}
         eventType={event.eventType}
         location={event.location}
         startTime={event.startTime}
