@@ -4,6 +4,7 @@ import Time from './components/Time/index';
 import Bus from './Bus/Bus';
 import Events from './Events/Events';
 import SignUpEvents from './Events/SignUpEvents';
+import Abakus from './components/Abakus';
 
 class Main extends Component {
   render() {
@@ -17,6 +18,7 @@ class Main extends Component {
           <Route path="/events" component={Events} />
           <Route path="/bus" component={Bus} />
           <Route path="/signup" component={SignUpEvents} />
+          <Abakus />
         </div>
       </Router>
     );
