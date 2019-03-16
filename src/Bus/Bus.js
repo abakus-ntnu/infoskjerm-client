@@ -24,21 +24,20 @@ class BusComponent extends Component {
   }
 
   renderList() {
-    console.log(this.props);
     const { data } = this.props;
     return (
-
       <div className="full-grid">
-        <h1 className="bus-til-byen">Til Byen</h1>
-        <h2 className="bus-til-byen-fra-glos">Gløshaugen</h2>
-        <BusList departureList={data.to.glos} className="til-byen-fra-glos" />
-        <h2 className="bus-til-byen-fra-prof">Prof. Brochs Gate</h2>
-        <BusList departureList={data.from.glos} className="fra-byen-til-glos" />
-        <h1 className="bus-fra-byen">Fra Byen</h1>
-        <h2 className="bus-til-glos-fra-byen">Gløshaugen</h2>
-        <BusList departureList={data.to.prof} className="til-byen-fra-prof" />
-        <h2 className="bus-til-prof-fra-byen">Prof. Brochs Gate</h2>
-        <BusList departureList={data.from.prof} className="fra-byen-til-prof" />
+        <h1 id="bus-til-byen">Til Byen</h1>
+        <h2 id="bus-til-byen-fra-glos" className="stopTitle">Gløshaugen</h2>
+        <BusList departureList={data.to.glos} id="til-byen-fra-glos" />
+        <h2 id="bus-til-byen-fra-prof" className="stopTitle">Prof. Brochs Gate</h2>
+        <BusList departureList={data.from.glos} id="fra-byen-til-glos" />
+
+        <h1 id="bus-fra-byen">Fra Byen</h1>
+        <h2 id="bus-til-glos-fra-byen" className="stopTitle">Gløshaugen</h2>
+        <BusList departureList={data.to.prof} id="til-byen-fra-prof" />
+        <h2 id="bus-til-prof-fra-byen" className="stopTitle">Prof. Brochs Gate</h2>
+        <BusList departureList={data.from.prof} id="fra-byen-til-prof" />
       </div>
     );
   }
