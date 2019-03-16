@@ -1,37 +1,38 @@
-.bus-til-byen{ 
+#bus-til-byen{ 
   grid-area: til-byen-header;
   text-align: center;
 }
 
-.bus-fra-byen { 
+#bus-fra-byen { 
   grid-area: fra-byen-header;
   text-align: center;
 }
 
-.bus-til-byen-fra-glos { 
+#bus-til-byen-fra-glos { 
   grid-area: til-byen-fra-glos;
   margin-left: 15px;
 }
 
-.bus-til-byen-fra-prof{ 
+#bus-til-byen-fra-prof{ 
   grid-area: til-byen-fra-prof;
   margin-left: 15px;
  }
 
-.bus-til-glos-fra-byen { 
+#bus-til-glos-fra-byen { 
   grid-area: fra-byen-til-glos;
   margin-left: 15px;
  }
 
-.bus-til-prof-fra-byen{ 
+#bus-til-prof-fra-byen{ 
   grid-area: fra-byen-til-prof;
   margin-left: 15px;
  }
- 
-.fra-byen-til-glos{ grid-area: tid-fra-byen-til-glos}
-.fra-byen-til-prof{ grid-area: tid-fra-byen-til-prof}
-.til-byen-fra-glos{ grid-area: tid-til-byen-fra-glos}
-.til-byen-fra-prof{ grid-area: tid-til-byen-fra-prof}
+
+
+#fra-byen-til-glos{ grid-area: tid-fra-byen-til-glos}
+#fra-byen-til-prof{ grid-area: tid-fra-byen-til-prof}
+#til-byen-fra-glos{ grid-area: tid-til-byen-fra-glos}
+#til-byen-fra-prof{ grid-area: tid-til-byen-fra-prof}
 
 .full-grid {
   display: grid;
