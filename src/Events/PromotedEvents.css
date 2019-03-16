@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   flex: auto;
+  
 }
 
 .split {
@@ -31,6 +32,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+  white-space: nowrap;
 }
 
 .event-text {

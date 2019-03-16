@@ -42,19 +42,36 @@ class PromotedEventsComponent extends Component {
     const { data } = this.props;
     const business = this.getBusinessEvents(data);
     const party = this.getPartyEvents(data);
+    console.log(data);
+    console.log('render render event');
+    if (party[0]) {
+      if (party[0].title) {
+        return (
+          <div id="all-wrapper">
+            <div className="split left">
+              <SinglePromotedEvent event={business[0]} className="promotedBusiness" />
+            </div>
+            <div className="split right">
+              <SinglePromotedEvent event={party[0]} className="promotedParty" />
+            </div>
+          </div>
+        );
+      }
+    }
     return (
       <div id="all-wrapper">
         <div className="split left">
-          <SinglePromotedEvent event={business} className="promotedBusiness" />
+          {/* <SinglePromotedEvent event={business} className="promotedBusiness" /> */}
         </div>
         <div className="split right">
-          <SinglePromotedEvent event={party} className="promotedParty" />
+          {/* <SinglePromotedEvent event={party} className="promotedParty" /> */}
         </div>
       </div>
     );
   }
 
   render() {
+    console.log('Render event');
     return (
       <div id="promoted-party-event">
         {this.renderEvent()}

@@ -31,8 +31,12 @@ const dateToFormattedDate = (isoString) => {
   return formattedDate;
 };
 
-function getCapacity(totalCapacity, registered) {
-  return (totalCapacity === 0 ? '' : `${registered}/${totalCapacity} påmeldt`);
+function getCapacity(totalCapacity, registrationCount) {
+  return (totalCapacity === 0 ? 'Ingen påmelding!' : `${registrationCount}/${totalCapacity} påmeldt`);
+}
+
+function getEventType(eventType) {
+  return undefined;
 }
 
 const SinglePromotedEvent = ({ event }) => {
@@ -45,9 +49,10 @@ const SinglePromotedEvent = ({ event }) => {
     startTime =
     new Date().toJSON(),
     totalCapacity = 0,
-    registered = 0,
+    registrationCount = 0,
   } = event;
-  console.log(event[0]);
+  console.log(event);
+  console.log(event.registered);
 
 
   return (
@@ -69,7 +74,7 @@ const SinglePromotedEvent = ({ event }) => {
         {dateToFormattedTime(startTime)}
       </div>
       <div className="event-text">
-        {getCapacity(totalCapacity, registered)}
+        {getCapacity(totalCapacity, registrationCount)}
       </div>
     </div>
   );
