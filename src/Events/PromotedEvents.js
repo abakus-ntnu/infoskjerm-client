@@ -1,47 +1,76 @@
 import React, { Component } from 'react';
-import { string, number } from 'prop-types';
+import {
+  string, number, func, object, arrayOf,
+} from 'prop-types';
+import { connect } from 'react-redux';
+import { fetchEvents } from '../store/modules/events';
+import SinglePromotedEvent from './SinglePromotedEvent';
+import './PromotedEvents.css';
 
 
-class PromotedEvents extends Component {
+class PromotedEventsComponent extends Component {
   static propTypes = {
-    index: number.isRequired,
-    cover: string.isRequired,
-    title: string.isRequired,
-    eventType: string.isRequired,
-    location: string.isRequired,
-    startTime: string.isRequired,
-    totalCapacity: number.isRequired,
-    registered: number.isRequired,
-    }
+    get: func,
+    data: arrayOf(object),
+  }
 
   static defaultProps = {
-    index: 0,
-    cover: "https://abakus.no/7df72c5a291dc020b1d5d191ba50d871.png",
-    title: 'Title',
-    eventType: 'Social',
-    location: 'NTNU',
-    startTime: '2019-01-01T00:00:00Z',
-    totalCapacity: 0,
-    registered: 0,
-  } 
+    get: () => {},
+    data: [],
+  }
 
-  render() {
-    const {
-    index, cover, title, eventType, location, startTime, totalCapacity, registered,
-    } = this.props;
+  componentDidMount() {
+    const { get } = this.props;
+    get();
+  }
+
+  getBusinessEvents(data) {
+    const list = data.filter(event => event.eventType == 'company_presentation' || event.eventType == 'course' || event.eventType == 'KID_event' || event.eventType == 'lunch_presentation');
     return (
-      <div id="promoted-event-wrapper">
-        <img id="cover" src={cover} alt="Cover" width="300" height="120" />
-        <div id="title"> {title} </div>
-        <div id="eventType"> {eventType} </div>
-        <div id="location"> {location} </div>
-        <div id="startTime"> {startTime} </div>
-        <div id="totalCapacity"> {totalCapacity} </div>
-        <div id="registered"> {registered} </div>
+      list.slice(0, 1)
+    );
+  }
+
+  getPartyEvents(data) {
+    const list = data.filter(event => event.eventType == 'social' || event.eventType == 'party' || event.eventType == 'event' || event.eventType == 'other');
+    return (
+      list.slice(0, 1)
+    );
+  }
+
+  renderEvent() {
+    const { data } = this.props;
+    const business = this.getBusinessEvents(data);
+    const party = this.getPartyEvents(data);
+    console.log(business[0]);
+    return (
+      <div id="all-wrapper">
+        <div className="split left">
+          <SinglePromotedEvent event={business} className="promotedBusiness" />
+        </div>
+        <div className="split right">
+          <SinglePromotedEvent event={party} className="promotedParty" />
+        </div>
       </div>
     );
-  };
-};
+  }
 
+  render() {
+    return (
+      <div id="promoted-party-event">
+        {this.renderEvent()}
+      </div>
+    );
+  }
+}
+
+
+const mapStateToProps = state => ({ data: state.events.data });
+
+const mapDispatchToProps = dispatch => ({
+  get: () => dispatch(fetchEvents()),
+});
+
+const PromotedEvents = connect(mapStateToProps, mapDispatchToProps)(PromotedEventsComponent);
 
 export default PromotedEvents;
