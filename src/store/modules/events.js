@@ -37,7 +37,7 @@ export function fetchEvents() {
   return (dispatch) => {
     dispatch(fetchEventsBegin());
     axios
-      .get('https://jowies.com/api/events')
+      .get('https://infoskjerm-api.koskom.no/events')
       .then((response) => {
         dispatch(fetchEventsSuccess(response.data));
       })
