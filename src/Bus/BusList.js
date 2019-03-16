@@ -18,9 +18,9 @@ class BusList extends Component {
     return (
       <div>
         {departureList.map(
-          (departure, index) => (
+          (departure, idx) => (
             <BusListItem
-              key={index}
+              key={idx}
               line={departure.line}
               destination={departure.destination}
               timeUntilDeparture={departure.timeUntilDeparture}
