@@ -80,7 +80,7 @@ class Time extends Component {
   render() {
     const { date } = this.state;
     return (
-      <div id="trapezoid-shape">
+      <div id="rectangular-shape">
         <span id="date">
           {this.dateToFormattedDate(date)}
         </span>
