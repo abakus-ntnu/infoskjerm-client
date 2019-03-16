@@ -2,6 +2,38 @@ import React, { Component } from 'react';
 import { string } from 'prop-types';
 import './PromotedEvents.css';
 
+const dateToFormattedHours = (date) => {
+  const hours = date.getHours();
+  return hours.toString().length <= 1 ? `0${hours}` : hours;
+};
+
+const dateToFormattedMinutes = (date) => {
+  const minutes = date.getMinutes();
+  return minutes.toString().length <= 1 ? `0${minutes}` : minutes;
+};
+
+const dateToFormattedTime = (isoString) => {
+  const date = new Date(isoString);
+  let timeString = '';
+  timeString += `${dateToFormattedHours(date)}:`;
+  timeString += `${dateToFormattedMinutes(date)}`;
+  return timeString;
+};
+
+const dateToMonth = (date) => {
+  const months = ['januar', 'februar', 'mars', 'april', 'mai', 'juni', 'juli', 'august', 'september', 'oktober', 'november', 'desember'];
+  return months[date.getMonth()];
+};
+
+const dateToFormattedDate = (isoString) => {
+  const date = new Date(isoString);
+  const formattedDate = `${date.getDate()}. ${dateToMonth(date)}`;
+  return formattedDate;
+};
+
+function getCapacity(totalCapacity, registered) {
+  return (totalCapacity === 0 ? '' : `${registered}/${totalCapacity} påmeldt`);
+}
 
 const SinglePromotedEvent = ({ event }) => {
   const {
@@ -11,31 +43,33 @@ const SinglePromotedEvent = ({ event }) => {
     eventType = 'EventType',
     location = 'NTNU',
     startTime =
-    '2019-01-01T00:00:00Z',
+    new Date().toJSON(),
     totalCapacity = 0,
     registered = 0,
   } = event;
+  console.log(event[0]);
+
 
   return (
     <div id="promoted-event-wrapper" key={id}>
       <img id="cover" src={cover} alt="Cover" width="300" height="120" />
-      <div id="title">
+      <h1 id="title">
         {title}
-      </div>
-      <div id="eventType">
+      </h1>
+      <div className="event-text">
         {eventType}
       </div>
-      <div id="location">
+      <div className="event-text">
         {location}
       </div>
-      <div id="startTime">
-        {startTime}
+      <div className="event-text" id="date">
+        {dateToFormattedDate(startTime)}
       </div>
-      <div id="totalCapacity">
-        {totalCapacity}
+      <div className="event-text" id="time">
+        {dateToFormattedTime(startTime)}
       </div>
-      <div id="registered">
-        {registered}
+      <div className="event-text">
+        {getCapacity(totalCapacity, registered)}
       </div>
     </div>
   );

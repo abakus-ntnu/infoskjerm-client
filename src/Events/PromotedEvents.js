@@ -42,7 +42,6 @@ class PromotedEventsComponent extends Component {
     const { data } = this.props;
     const business = this.getBusinessEvents(data);
     const party = this.getPartyEvents(data);
-    console.log(business[0]);
     return (
       <div id="all-wrapper">
         <div className="split left">
