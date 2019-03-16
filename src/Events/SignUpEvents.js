@@ -10,15 +10,14 @@ class SignUpEvents extends Component {
     title: 'EventTitle',
   }
 
+
   render() {
     const { title } = this.props;
-    
-    return(
-      <h4>{title}</h4>
-    )
+
+    return (
+      <div id="signup-wrapper" />
+    );
   }
-
-
-
-
 }
+
+export default SignUpEvents;
