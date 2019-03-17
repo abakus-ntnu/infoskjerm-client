@@ -44,9 +44,9 @@ class BusComponent extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         {this.renderList()}
-      </div>
+      </React.Fragment>
     );
   }
 }

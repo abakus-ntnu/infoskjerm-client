@@ -39,6 +39,9 @@
   background-color: white;
   padding: 5px;
   grid-gap: 10px 200px;
+  position: absolute;
+  width: 100%;
+  bottom: 0%;
   grid-template-areas:
   'til-byen-header fra-byen-header'
   'til-byen-fra-glos fra-byen-til-glos'
