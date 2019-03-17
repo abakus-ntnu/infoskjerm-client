@@ -1,4 +1,6 @@
 #logo {
-  margin: 0 auto;
-  display:block;
+  bottom: 0%;
+  position: absolute;
+  left: 50%;
+  margin-left: -70px;
 }
