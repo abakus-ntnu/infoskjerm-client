@@ -42,6 +42,7 @@
   position: absolute;
   width: 100%;
   bottom: 0%;
+  top: 0%;
   grid-template-areas:
   'til-byen-header fra-byen-header'
   'til-byen-fra-glos fra-byen-til-glos'
