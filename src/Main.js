@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import TransitionGroup from 'react-transition-group/TransitionGroup';
 import Time from './components/Time/index';
 import Bus from './Bus/Bus';
 import Events from './Events/Events';
@@ -19,10 +18,31 @@ class Main extends Component {
           <div>
             <Time displayTime />
           </div>
-          <Route exact path="/" component={() => <Redirect to="/events" />} />
-          <Route path="/events" component={Events} />
-          <Route path="/bus" component={Bus} />
-          <Route path="/signup" component={SignUpEvents} />
+          <Route
+            exact
+            path="/"
+            children={({ match, ...rest }) => (
+              <TransitionGroup component={Events}>
+                {match && <Events {...rest} />}
+              </TransitionGroup>
+            )}
+          />
+          <Route
+            path="/events"
+            children={({ match, ...rest }) => (
+              <TransitionGroup component={Events}>
+                {match && <Events {...rest} /> }
+              </TransitionGroup>
+            )}
+          />
+          <Route
+            path="/bus"
+            children={({ match, ...rest }) => (
+              <TransitionGroup component={Bus}>
+                {match && <Bus {...rest} /> }
+              </TransitionGroup>
+            )}
+          />
           <Abakus />
         </div>
       </Router>
@@ -31,3 +51,8 @@ class Main extends Component {
 }
 
 export default Main;
+
+/*
+          <Route path="/bus" component={Bus} />
+          <Route path="/signup" component={SignUpEvents} />
+*/
