@@ -36,7 +36,10 @@ function getCapacity(totalCapacity, registrationCount) {
 }
 
 function getEventType(eventType) {
-  return undefined;
+  const eventNames = {
+    company_presentation: 'Bedriftspresentasjon', course: 'Kurs', KID_event: 'KID', lunch_presentation: 'Lunchpresentasjon', social: 'Sosialt', party: 'Fest', event: 'Arrangement', other: 'Annet',
+  };
+  return eventNames[eventType];
 }
 
 const SinglePromotedEvent = ({ event }) => {
@@ -51,8 +54,6 @@ const SinglePromotedEvent = ({ event }) => {
     totalCapacity = 0,
     registrationCount = 0,
   } = event;
-  console.log(event);
-  console.log(event.registered);
 
 
   return (
@@ -62,7 +63,7 @@ const SinglePromotedEvent = ({ event }) => {
         {title}
       </h1>
       <div className="event-text">
-        {eventType}
+        {getEventType(eventType)}
       </div>
       <div className="event-text">
         {location}

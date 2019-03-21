@@ -25,14 +25,16 @@ class PromotedEventsComponent extends Component {
   }
 
   getBusinessEvents(data) {
-    const list = data.filter(event => event.eventType == 'company_presentation' || event.eventType == 'course' || event.eventType == 'KID_event' || event.eventType == 'lunch_presentation');
+    const eventTypeList = ['company_presentation', 'course', 'KID_event', 'lunch_presentation'];
+    const list = data.filter(event => eventTypeList.includes(event.eventType));
     return (
       list.slice(0, 1)
     );
   }
 
   getPartyEvents(data) {
-    const list = data.filter(event => event.eventType == 'social' || event.eventType == 'party' || event.eventType == 'event' || event.eventType == 'other');
+    const eventTypeList = ['social',, 'party', 'event', 'other'];
+    const list = data.filter(event => eventTypeList.includes(event.eventType));
     return (
       list.slice(0, 1)
     );
@@ -43,7 +45,6 @@ class PromotedEventsComponent extends Component {
     const business = this.getBusinessEvents(data);
     const party = this.getPartyEvents(data);
     console.log(data);
-    console.log('render render event');
     if (party[0]) {
       if (party[0].title) {
         return (
@@ -71,7 +72,6 @@ class PromotedEventsComponent extends Component {
   }
 
   render() {
-    console.log('Render event');
     return (
       <div id="promoted-party-event">
         {this.renderEvent()}
