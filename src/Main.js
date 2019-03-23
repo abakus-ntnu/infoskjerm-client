@@ -7,6 +7,9 @@ import SignUpEvents from './Events/SignUpEvents';
 import Abakus from './components/Abakus';
 
 class Main extends Component {
+  componentDidMount() {
+    document.body.style.overflow = 'hidden';
+  }
   render() {
     return (
       <Router>
