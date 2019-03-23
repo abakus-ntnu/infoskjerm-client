@@ -5,6 +5,9 @@ import Bus from './Bus/Bus';
 import Events from './Events/Events';
 
 class Main extends Component {
+  componentDidMount() {
+    document.body.style.overflow = 'hidden';
+  }
   render() {
     return (
       <Router>
