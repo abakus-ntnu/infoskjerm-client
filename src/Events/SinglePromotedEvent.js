@@ -42,6 +42,13 @@ function getEventType(eventType) {
   return eventNames[eventType];
 }
 
+function getTitleLineColor(eventType) {
+  const eventNames = {
+    company_presentation: 'green', course: 'blue', KID_event: 'green', lunch_presentation: 'green', social: 'red', party: 'yellow', event: 'red', other: 'black',
+  };
+  return eventNames[eventType];
+}
+
 const SinglePromotedEvent = ({ event }) => {
   const {
     id = 0,
@@ -58,20 +65,21 @@ const SinglePromotedEvent = ({ event }) => {
 
   return (
     <div id="promoted-event-wrapper" key={id}>
-      <img id="cover" src={cover} alt="Cover" width="300" height="120" />
-      <h1 id="title">
+      <img className="cover" src={cover} alt="Cover" />
+      <h1 className="title">
         {title}
       </h1>
+      <div className={`title-line ${getTitleLineColor(eventType)}`} />
       <div className="event-text">
         {getEventType(eventType)}
       </div>
       <div className="event-text">
         {location}
       </div>
-      <div className="event-text" id="date">
+      <div className="event-text">
         {dateToFormattedDate(startTime)}
       </div>
-      <div className="event-text" id="time">
+      <div className="event-text">
         {dateToFormattedTime(startTime)}
       </div>
       <div className="event-text">

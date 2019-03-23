@@ -35,7 +35,57 @@
   white-space: nowrap;
 }
 
+.cover {
+  width: 500px;
+}
+
 .event-text {
-  font-size: 120%;
+  font-size: 1.5em;
   font-weight: bold;
+}
+
+.title-line {
+  height: 2px;
+  margin-bottom: 25px;
+}
+
+.title-line.green {
+  background-color: #A1C34A;
+}
+.title-line.yellow {
+  background-color: rgb(252, 215, 72);
+}
+.title-line.black {
+  background-color: #111;
+}
+.title-line.blue {
+  background-color: #52B0EC;
+}
+.title-line.red {
+  background-color: #B11C11;
+}
+
+@media screen and (max-width: 1080px) {
+  .cover {
+    width: 330px;
+  }
+  .title {
+    font-size: 1.5em;
+  }
+  .event-text {
+    font-size: 1.1em;
+  }
+}
+
+  @media screen and (max-width: 720px) {
+    .cover {
+      width: 200px;
+    }
+    .title {
+      font-size: 1.3em;
+    }
+    .event-text {
+      font-size: 0.8em;
+    }
+
 }
