@@ -5,7 +5,7 @@ import {
 } from 'prop-types';
 import BusList from './BusList';
 import { fetchBus } from '../store/modules/bus';
-import './Bus.css';
+import './bus.css';
 
 class BusComponent extends Component {
   static propTypes = {

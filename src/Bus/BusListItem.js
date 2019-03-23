@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 import { string } from 'prop-types';
-import './Bus.css';
+import './bus.css';
 
 
 class BusListItem extends Component {
