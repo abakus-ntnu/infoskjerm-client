@@ -9,6 +9,10 @@ const initialState = {
     data: [],
     error: false,
   },
+  home: {
+    loading: false,
+    data: [{ path: '/bus', name: 'Bus', Component: Bus }],
+  },
 };
 
 export default initialState;
