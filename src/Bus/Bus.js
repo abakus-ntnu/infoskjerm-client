@@ -21,6 +21,7 @@ class BusComponent extends Component {
   componentDidMount() {
     const { get } = this.props;
     get();
+    setInterval(()=> get(), 10000);
   }
 
   renderList() {
