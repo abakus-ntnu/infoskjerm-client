@@ -27,15 +27,10 @@ class Main extends Component {
           <React.Fragment>
             <Time displayTime />
           </React.Fragment>
-
-          <CSSTransition
-            timeout={300}
-            classNames="page"
-            unmountOnExit
-          >
-            {currentComponent}
-          </CSSTransition>
-
+          <Route exact path="/" component={() => <Redirect to="/events" />} />
+          <Route path="/events" component={Events} />
+          <Route path="/bus" component={Bus} />
+          <Route path="/signup" component={SignUpEvents} />
           <Abakus />
         </>
       </Router>
