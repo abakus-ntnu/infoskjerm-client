@@ -9,6 +9,11 @@ const initialState = {
     data: [],
     error: false,
   },
+  animation: {
+    components: ['bus', 'events', 'signup'],
+    currentIndex: 0,
+    currentComponent: 'bus',
+  },
 };
 
 export default initialState;
