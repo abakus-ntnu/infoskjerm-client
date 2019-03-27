@@ -24,8 +24,6 @@ class MainComponent extends Component {
   componentDidMount() {
     const { get } = this.props;
     get();
-    setTimeout(3000);
-    get();
   }
 
 
