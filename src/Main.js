@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { func, shape } from 'prop-types';
 import { connect } from 'react-redux';
 import Time from './components/Time/index';
@@ -45,15 +44,13 @@ class MainComponent extends Component {
 
   render() {
     return (
-      <Router>
-        <div>
-          <div>
-            <Time displayTime />
-          </div>
-          {this.renderComponent()}
-          <Abakus />
-        </div>
-      </Router>
+      <>
+        <React.Fragment>
+          <Time displayTime />
+        </React.Fragment>
+        {this.renderComponent()}
+        <Abakus />
+      </>
     );
   }
 }
@@ -67,10 +64,3 @@ const mapDispatchToProps = dispatch => ({
 const Main = connect(mapStateToProps, mapDispatchToProps)(MainComponent);
 
 export default Main;
-
-/*
-          <Route exact path="/" component={() => <Redirect to="/events" />} />
-          <Route path="/events" component={Events} />
-          <Route path="/bus" component={Bus} />
-          <Route path="/signup" component={SignUpEvents} />
-*/
