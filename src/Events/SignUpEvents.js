@@ -15,7 +15,9 @@ class SignUpEvents extends Component {
     const { title } = this.props;
 
     return (
-      <div id="signup-wrapper" />
+      <div id="signup-wrapper">
+        <p>viser hvor vi er</p>
+      </div>
     );
   }
 }
