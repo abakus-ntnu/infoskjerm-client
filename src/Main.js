@@ -1,53 +1,66 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
-import { CSSTransition } from 'react-transition-group';
+import { func, shape } from 'prop-types';
+import { connect } from 'react-redux';
 import Time from './components/Time/index';
 import Bus from './Bus/Bus';
 import Events from './Events/Events';
 import SignUpEvents from './Events/SignUpEvents';
 import Abakus from './components/Abakus';
-import './styles.css';
+import { fetchNextComponent } from './store/modules/animation';
 
-class Main extends Component {
-  routes = [
-    { path: '/', name: 'Home', Component: Events },
-    { path: '/bus', name: 'Bus', Component: Bus },
-    { path: '/signup', name: 'SignUp', Component: SignUpEvents },
-  ];
+class MainComponent extends Component {
+  static propTypes = {
+    get: func,
+    data: shape(),
+  }
+
+  static defaultProps = {
+    get: () => { },
+    data: [],
+  }
 
   componentDidMount() {
-    document.body.style.overflow = 'hidden';
+    const { get } = this.props;
+    get();
+    setInterval(() => {
+      get();
+    }, 10 * 1000);
   }
 
 
+  renderComponent() {
+    const { data } = this.props;
+    switch (data.currentComponent) {
+      case 'bus':
+        return (<Bus />);
+      case 'events':
+        return (<Events />);
+      case 'signup':
+        return (<SignUpEvents />);
+      default:
+        return (<Bus />);
+    }
+  }
+
   render() {
     return (
-      <Router>
-        <>
-          <React.Fragment>
-            <Time displayTime />
-          </React.Fragment>
-          <Route exact path="/" component={() => <Redirect to="/events" />} />
-          <Route path="/events" component={Events} />
-          <Route path="/bus" component={Bus} />
-          <Route path="/signup" component={SignUpEvents} />
-          <Abakus />
-        </>
-      </Router>
+      <>
+        <React.Fragment>
+          <Time displayTime />
+        </React.Fragment>
+        {this.renderComponent()}
+        <Abakus />
+      </>
     );
   }
 }
 
+const mapStateToProps = state => ({ data: state.animation });
+
+const mapDispatchToProps = dispatch => ({
+  get: () => dispatch(fetchNextComponent()),
+});
+
+const Main = connect(mapStateToProps, mapDispatchToProps)(MainComponent);
+
 export default Main;
-
-/*
-<Route exact path="/" component={() => <Redirect to="/events" />} />
-            <Route path="/events" component={Events} />
-            <Route path="/bus" component={Bus} />
-            <Route path="/signup" component={SignUpEvents} />
-*/
-
-/*
-Setter opp en setInterval som endrer storen gjør et action kall som endrer staten hvert 15. sekund
-Kan ha en slags state som viser hvilken komponent som skal vise
-*/
