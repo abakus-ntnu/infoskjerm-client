@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import { CSSTransitionGroup } from 'react-transition-group';
 import { func, shape } from 'prop-types';
 import { connect } from 'react-redux';
 import Time from './components/Time/index';
@@ -26,7 +25,7 @@ class MainComponent extends Component {
     get();
     setInterval(() => {
       get();
-    }, 5000);
+    }, 10 * 1000);
   }
 
 
