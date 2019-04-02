@@ -58,10 +58,8 @@ const SinglePromotedEvent = ({ event }) => {
     location = 'NTNU',
     startTime =
     new Date().toJSON(),
-    totalCapacity = 0,
-    registrationCount = 0,
+    registrationTime = null,
   } = event;
-
 
   return (
     <div id="promoted-event-wrapper" key={id}>
@@ -83,7 +81,11 @@ const SinglePromotedEvent = ({ event }) => {
         {dateToFormattedTime(startTime)}
       </div>
       <div className="event-text">
-        {getCapacity(totalCapacity, registrationCount)}
+        Påmelding åpner:
+        {' '}
+        {dateToFormattedDate(registrationTime)}
+        {' '}
+        {dateToFormattedTime(registrationTime)}
       </div>
     </div>
   );
