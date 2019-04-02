@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { func, arrayOf, object } from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchEvents } from '../store/modules/events';
-import HalfSignupEvents from './HalfSignupEvents';
-import './SignUpEvents.css';
+import UpcomingHalfEvents from './UpcomingHalfEvents';
+import './UpcomingEvents.css';
 
 
-class SignUpEventsComponent extends Component {
+class UpcomingEventsComponent extends Component {
   static propTypes = {
     get: func,
     data: arrayOf(object),
@@ -22,11 +22,20 @@ class SignUpEventsComponent extends Component {
     get();
   }
 
-  getSignupEvents = (data) => {
-    const today = new Date().toJSON();
-    const list = data.filter(event => event.registrationTime && event.registrationTime > today)
-      .sort((a, b) => (a.time < b.time ? -1 : 1));
-    return list.slice(0, 3);
+  getBusinessEvents = (data) => {
+    const eventTypeList = ['company_presentation', 'course', 'KID_event', 'lunch_presentation'];
+    const list = data.filter(event => eventTypeList.includes(event.eventType));
+    return (
+      list.slice(0, 3)
+    );
+  }
+
+  getPartyEvents = (data) => {
+    const eventTypeList = ['social', 'party', 'event', 'other'];
+    const list = data.filter(event => eventTypeList.includes(event.eventType));
+    return (
+      list.slice(0, 3)
+    );
   }
 
   renderEvent() {
@@ -36,12 +45,12 @@ class SignUpEventsComponent extends Component {
         return (
           <div id="signup-wrapper">
             <div className="split left">
-              <h1>Neste Påmeldinger</h1>
-              <HalfSignupEvents events={this.getSignupEvents(data)} className="half" />
+              <h1>Neste Business</h1>
+              <UpcomingHalfEvents events={this.getBusinessEvents(data)} className="half" />
             </div>
             <div className="split right">
-              <h1>Neste Arrangement</h1>
-              <HalfSignupEvents events={data.slice(0, 3)} className="half" />
+              <h1>Neste sosialt</h1>
+              <UpcomingHalfEvents events={this.getPartyEvents(data)} className="half" />
             </div>
           </div>
         );
@@ -74,6 +83,6 @@ const mapDispatchToProps = dispatch => ({
   get: () => dispatch(fetchEvents()),
 });
 
-const SignUpEvents = connect(mapStateToProps, mapDispatchToProps)(SignUpEventsComponent);
+const UpcomingEvents = connect(mapStateToProps, mapDispatchToProps)(UpcomingEventsComponent);
 
-export default SignUpEvents;
+export default UpcomingEvents;

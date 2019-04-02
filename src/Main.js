@@ -3,8 +3,8 @@ import { func, shape } from 'prop-types';
 import { connect } from 'react-redux';
 import Time from './components/Time/index';
 import Bus from './Bus/Bus';
-import Events from './Events/Events';
-import SignUpEvents from './Events/SignUpEvents';
+import PromotedEvents from './Events/Events';
+import UpcomingEvents from './Events/UpcomingEvents';
 import Abakus from './components/Abakus';
 import { fetchNextComponent } from './store/modules/animation';
 
@@ -34,9 +34,9 @@ class MainComponent extends Component {
       case 'bus':
         return (<Bus />);
       case 'events':
-        return (<Events />);
+        return (<PromotedEvents />);
       case 'signup':
-        return (<SignUpEvents />);
+        return (<UpcomingEvents />);
       default:
         return (<Bus />);
     }

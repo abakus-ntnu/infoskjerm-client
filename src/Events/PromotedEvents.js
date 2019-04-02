@@ -24,36 +24,26 @@ class PromotedEventsComponent extends Component {
     get();
   }
 
-  getBusinessEvents(data) {
-    const eventTypeList = ['company_presentation', 'course', 'KID_event', 'lunch_presentation'];
-    const list = data.filter(event => eventTypeList.includes(event.eventType));
-    return (
-      list.slice(0, 1)
-    );
-  }
-
-  getPartyEvents(data) {
-    const eventTypeList = ['social',, 'party', 'event', 'other'];
-    const list = data.filter(event => eventTypeList.includes(event.eventType));
-    return (
-      list.slice(0, 1)
-    );
+  getSignupEvents = (data) => {
+    const today = new Date().toJSON();
+    const list = data.filter(event => event.registrationTime && event.registrationTime > today)
+      .sort((a, b) => (a.time < b.time ? -1 : 1));
+    return list.slice(0, 2);
   }
 
   renderEvent() {
     const { data } = this.props;
-    const business = this.getBusinessEvents(data);
-    const party = this.getPartyEvents(data);
+    const eventList = this.getSignupEvents(data);
     console.log(data);
-    if (party[0]) {
-      if (party[0].title) {
+    if (eventList[0]) {
+      if (eventList[0].title) {
         return (
           <div id="all-wrapper">
             <div className="split left">
-              <SinglePromotedEvent event={business[0]} className="promotedBusiness" />
+              <SinglePromotedEvent event={eventList[0]} className="promotedBusiness" />
             </div>
             <div className="split right">
-              <SinglePromotedEvent event={party[0]} className="promotedParty" />
+              <SinglePromotedEvent event={eventList[1]} className="promotedParty" />
             </div>
           </div>
         );
