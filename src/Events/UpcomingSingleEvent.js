@@ -5,6 +5,13 @@ function getCapacity(totalCapacity, registrationCount) {
   return (totalCapacity === 0 ? 'Ingen påmelding!' : `${registrationCount}/${totalCapacity} påmeldt`);
 }
 
+function getTitleLineColor(eventType) {
+  const eventNames = {
+    company_presentation: 'green', course: 'blue', KID_event: 'green', lunch_presentation: 'green', social: 'red', party: 'yellow', event: 'red', other: 'black',
+  };
+  return eventNames[eventType];
+}
+
 const SingleSignupEvent = ({ event }) => {
   const {
     id = 0,
@@ -18,8 +25,8 @@ const SingleSignupEvent = ({ event }) => {
 
   return (
     <div className="signup-wrapper" key={id}>
-      <div className={`event-type-line ${eventType}`}>.</div>
       <h1 className="title">{title}</h1>
+      <div className={`title-line ${getTitleLineColor(eventType)}`} />
       <div className="start-time">{startTime}</div>
       <div className="capacity">{getCapacity(totalCapacity, registrationCount)}</div>
     </div>
