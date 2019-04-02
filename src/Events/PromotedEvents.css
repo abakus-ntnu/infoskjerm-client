@@ -1,0 +1,41 @@
+#all-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: auto;
+  
+}
+
+.split {
+  height: 100%;
+  width: 50%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left: 0;
+  background-color: gray;
+}
+
+.right {
+  right: 0;
+  background-color: darkgray;
+}
+
+#promoted-event-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.event-text {
+  font-size: 120%;
+  font-weight: bold;
+}
