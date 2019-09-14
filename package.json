@@ -32,7 +32,8 @@
     "style-loader": "^0.23.0",
     "webpack": "^4.20.2",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "lodash-es": ">=4.17.14"
   },
   "dependencies": {
     "@babel/plugin-proposal-class-properties": "^7.1.0",
