@@ -45,11 +45,11 @@ class UpcomingEventsComponent extends Component {
         return (
           <div>
             <div className="split left">
-              <h1>Neste Business</h1>
+              <h1>Bedriftsarrangement</h1>
               <UpcomingHalfEvents events={this.getBusinessEvents(data)} className="half" />
             </div>
             <div className="split right">
-              <h1>Neste sosialt</h1>
+              <h1>Sosialarrangement</h1>
               <UpcomingHalfEvents events={this.getPartyEvents(data)} className="half" />
             </div>
           </div>
