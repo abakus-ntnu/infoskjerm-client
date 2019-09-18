@@ -3,12 +3,17 @@
   flex-wrap: wrap;
   flex-direction: row;
   flex: auto;
-  
 }
 
 .signup-wrapper {
   text-align: center;
   white-space: nowrap;
+  background-color:#ecf0f1;
+  margin: 20px;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 20px rgb(71, 71, 71);
+  font-family: Raleway,Helvetica Neue,Arial,sans-serif;
 }
 
 .split {
@@ -18,7 +23,9 @@
   z-index: -1;
   top: 0;
   overflow-x: hidden;
-  padding-top: 20px;
+  padding-top: 100px;
+  text-align: center;
+  
 }
 
 .left {
@@ -29,21 +36,6 @@
 .right {
   right: 0;
   background-color: darkgray;
-}
-
-.first {
-  position: absolute;
-  top: 200px;
-}
-
-.second {
-  position: absolute;
-  top: 400px;
-}
-
-.third {
-  position: absolute;
-  bottom: 200px;
 }
 
 
@@ -61,4 +53,7 @@
 }
 .title-line.red {
   background-color: #B11C11;
+}
+.title-line.purple {
+  background-color: rgb(138, 43, 226)
 }
