@@ -1,8 +1,28 @@
 import React from 'react';
 import './UpcomingEvents.css';
+import {
+  dateToFormattedDate,
+  dateToFormattedTime,
+} from '../components/Time/eventTime';
 
 function getCapacity(totalCapacity, registrationCount) {
-  return (totalCapacity === 0 ? 'Ingen påmelding!' : `${registrationCount}/${totalCapacity} påmeldt`);
+  return totalCapacity === 0
+    ? 'Ingen påmelding!'
+    : `${registrationCount}/${totalCapacity} påmeldt`;
+}
+
+function getTitleLineColor(eventType) {
+  const eventNames = {
+    company_presentation: 'green',
+    course: 'blue',
+    KID_event: 'green',
+    lunch_presentation: 'green',
+    social: 'red',
+    party: 'yellow',
+    event: 'red',
+    other: 'black',
+  };
+  return eventNames[eventType];
 }
 
 const SingleSignupEvent = ({ event }) => {
@@ -10,18 +30,21 @@ const SingleSignupEvent = ({ event }) => {
     id = 0,
     title = 'Tittel',
     eventType = 'EventType',
-    startTime =
-    new Date().toJSON(),
+    startTime = new Date().toJSON(),
     totalCapacity = 0,
     registrationCount = 0,
   } = event;
 
   return (
     <div className="signup-wrapper" key={id}>
-      <div className={`event-type-line ${eventType}`}>.</div>
       <h1 className="title">{title}</h1>
-      <div className="start-time">{startTime}</div>
-      <div className="capacity">{getCapacity(totalCapacity, registrationCount)}</div>
+      <div className={`title-line ${getTitleLineColor(eventType)}`} />
+      <div className="start-time">
+        {dateToFormattedDate(startTime)} | {dateToFormattedTime(startTime)}
+      </div>
+      <div className="capacity">
+        {getCapacity(totalCapacity, registrationCount)}
+      </div>
     </div>
   );
 };

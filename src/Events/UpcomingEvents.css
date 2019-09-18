@@ -1,3 +1,16 @@
+#all-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  flex: auto;
+  
+}
+
+.signup-wrapper {
+  text-align: center;
+  white-space: nowrap;
+}
+
 .split {
   height: 100%;
   width: 50%;
@@ -31,4 +44,21 @@
 .third {
   position: absolute;
   bottom: 200px;
+}
+
+
+.title-line.green {
+  background-color: #A1C34A;
+}
+.title-line.yellow {
+  background-color: rgb(252, 215, 72);
+}
+.title-line.black {
+  background-color: #111;
+}
+.title-line.blue {
+  background-color: #52B0EC;
+}
+.title-line.red {
+  background-color: #B11C11;
 }
