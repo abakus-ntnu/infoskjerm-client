@@ -1,4 +1,12 @@
-#bus-til-byen{ 
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v18/ieVl2ZhZI2eCN5jzbjEETS9weq8-19-7DQk6YvNkeg.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+#bus-til-byen{
   grid-area: til-byen-header;
   text-align: center;
 }
@@ -34,10 +42,11 @@
 #til-byen-fra-prof{ grid-area: tid-til-byen-fra-prof}
 
 .full-grid {
+  font-family: 'Roboto Condensed';
   display: grid;
   background-color: white;
-  padding: 5px;
-  grid-gap: 10px 200px;
+  padding: 1px;
+  grid-gap: 1px 200px;
   grid-template-areas:
   'til-byen-header fra-byen-header'
   'til-byen-fra-glos fra-byen-til-glos'
@@ -47,21 +56,41 @@
 }
 
 .list-item{
-  margin-top: 2px;
-  background-color: grey;
+  margin-top: 1px;
+  background-color: #333E46;
   width: 97%;
   opacity: 0.6;
   display: flex;
   padding: 5px;
   justify-content: flex-end;
+  border-radius: 10px
+}
+
+.list-item-live{
+  margin-top: 1px;
+  background-color: #333E46;
+  width: 97%;
+  opacity: 0.6;
+  display: flex;
+  padding: 5px;
+  justify-content: flex-end;
+  border-radius: 10px
 }
 
 .list-item > span{
-  margin: 5px;
-  padding: 5px;
-  font-size: 20px;
+  margin: 2px;
+  padding: 2px;
+  font-size: 15px;
   text-align: left;
-  color: black;
+  color: white;
+}
+
+.list-item-live > span{
+  margin: 2px;
+  padding: 2px;
+  font-size: 15px;
+  text-align: left;
+  color: #FDD130;
 }
 
 .line{

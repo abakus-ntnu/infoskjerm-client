@@ -24,7 +24,7 @@ class BusList extends Component {
               line={departure.line}
               destination={departure.destination}
               timeUntilDeparture={departure.timeUntilDeparture}
-              isRealTime={departure.isRealTime}
+              isRealtimeData={departure.isRealtimeData}
             />
           ),
         )}
