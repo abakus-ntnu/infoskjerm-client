@@ -1,10 +1,3 @@
-#all-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  flex: auto;
-}
-
 .signup-wrapper {
   text-align: center;
   white-space: nowrap;
@@ -23,9 +16,9 @@
   z-index: -1;
   top: 0;
   overflow-x: hidden;
-  padding-top: 100px;
+  padding-top: 70px;
   text-align: center;
-  
+  font-family: Raleway,Helvetica Neue,Arial,sans-serif;
 }
 
 .left {
@@ -38,6 +31,9 @@
   background-color: darkgray;
 }
 
+.title {
+  font-size: 270%;
+}
 
 .title-line.green {
   background-color: #A1C34A;
