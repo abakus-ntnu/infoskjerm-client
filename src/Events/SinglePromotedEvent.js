@@ -9,14 +9,14 @@ function getCapacity(totalCapacity, registrationCount) {
 
 function getEventType(eventType) {
   const eventNames = {
-    company_presentation: 'Bedriftspresentasjon', course: 'Kurs', KID_event: 'KID', lunch_presentation: 'Lunchpresentasjon', social: 'Sosialt', party: 'Fest', event: 'Arrangement', other: 'Annet',
+    company_presentation: 'Bedriftspresentasjon', course: 'Kurs', KID_event: 'KID', lunch_presentation: 'Lunchpresentasjon', social: 'Sosialt', party: 'Fest', event: 'Arrangement', alternative_presentation: 'Alternativ bedpres', other: 'Annet',
   };
   return eventNames[eventType];
 }
 
 function getTitleLineColor(eventType) {
   const eventNames = {
-    company_presentation: 'green', course: 'blue', KID_event: 'green', lunch_presentation: 'green', social: 'red', party: 'yellow', event: 'red', other: 'black',
+    company_presentation: 'green', course: 'blue', KID_event: 'green', lunch_presentation: 'green', social: 'red', party: 'yellow', event: 'red',alternative_presentation:'purple', other: 'black',
   };
   return eventNames[eventType];
 }
@@ -47,10 +47,7 @@ const SinglePromotedEvent = ({ event }) => {
         {location}
       </div>
       <div className="event-text">
-        {dateToFormattedDate(startTime)}
-      </div>
-      <div className="event-text">
-        {dateToFormattedTime(startTime)}
+        {dateToFormattedDate(startTime)} | {dateToFormattedTime(startTime)}
       </div>
       <div className="event-text">
         Påmelding åpner:
