@@ -9,12 +9,13 @@
   left: 50%;
   top: 0;
   margin-left: -100px;
+  font-family: Raleway,Helvetica Neue,Arial,sans-serif;
 }
 
 #time {
-  font-size: 30px;
+  font-size: 50px;
 }
 
 #date {
-  font-size: 20px;
+  font-size: 30px;
 }

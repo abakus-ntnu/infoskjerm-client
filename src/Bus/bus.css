@@ -42,11 +42,12 @@
 #til-byen-fra-prof{ grid-area: tid-til-byen-fra-prof}
 
 .full-grid {
-  font-family: 'Roboto Condensed';
+  font-family: 'Roboto Condensed',Raleway,Helvetica Neue,Arial,sans-serif;
   display: grid;
   background-color: white;
-  padding: 1px;
-  grid-gap: 1px 200px;
+  font-size: 140%;
+  padding: 2px;
+  grid-gap: 2px 200px;
   grid-template-areas:
   'til-byen-header fra-byen-header'
   'til-byen-fra-glos fra-byen-til-glos'
@@ -58,12 +59,13 @@
 .list-item{
   margin-top: 1px;
   background-color: #333E46;
+  height: 40px;
   width: 97%;
   opacity: 0.6;
   display: flex;
   padding: 5px;
   justify-content: flex-end;
-  border-radius: 10px
+  border-radius: 10px;
 }
 
 .list-item-live{
@@ -80,7 +82,7 @@
 .list-item > span{
   margin: 2px;
   padding: 2px;
-  font-size: 15px;
+  font-size: 20px;
   text-align: left;
   color: white;
 }

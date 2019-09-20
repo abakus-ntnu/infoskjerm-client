@@ -41,7 +41,6 @@ class MainComponent extends Component {
         return (<Bus />);
     }
   }
-
   render() {
     return (
       <>
