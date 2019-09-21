@@ -12,6 +12,14 @@
   z-index: -1;
 }
 
+.marble-background {
+  background-image: url('https://c.pxhere.com/images/62/a9/cf517dde935244a48a9940bf2927-1580813.jpg!d');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 4px 4px white inset;
+}
+
 .left {
   left: 0;
   background-color: gray;
