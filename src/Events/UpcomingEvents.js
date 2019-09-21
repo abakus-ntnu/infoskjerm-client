@@ -44,11 +44,11 @@ class UpcomingEventsComponent extends Component {
       if (data[0].title) {
         return (
           <div>
-            <div className="split left">
+            <div className="split left marble-background">
               <h1 className="title">Bedriftsarrangement</h1>
               <UpcomingHalfEvents events={this.getBusinessEvents(data)} className="half" />
             </div>
-            <div className="split right">
+            <div className="split right marble-background">
               <h1 className="title">Sosialarrangement</h1>
               <UpcomingHalfEvents events={this.getPartyEvents(data)} className="half" />
             </div>

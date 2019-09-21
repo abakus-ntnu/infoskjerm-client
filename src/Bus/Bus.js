@@ -27,14 +27,14 @@ class BusComponent extends Component {
   renderList() {
     const { data } = this.props;
     return (
-      <div className="full-grid">
-        <h1 id="bus-til-byen">Buss Til Byen</h1>
+      <div className="full-grid marble-background">
+        <h1 id="bus-til-byen">Buss til byen</h1>
         <h2 id="bus-til-byen-fra-glos" className="stopTitle">Gløshaugen</h2>
         <BusList departureList={data.to.gloshaugen} className="bus-list" id="til-byen-fra-glos" />
         <h2 id="bus-til-byen-fra-prof" className="stopTitle">Hesthagen</h2>
         <BusList departureList={data.from.gloshaugen} className="bus-list" id="fra-byen-til-glos" />
 
-        <h1 id="bus-fra-byen">Buss Fra Byen</h1>
+        <h1 id="bus-fra-byen">Buss fra byen</h1>
         <h2 id="bus-til-glos-fra-byen" className="stopTitle">Gløshaugen</h2>
         <BusList departureList={data.to.hesthagen} className="bus-list" id="til-byen-fra-prof" />
         <h2 id="bus-til-prof-fra-byen" className="stopTitle">Hesthagen</h2>

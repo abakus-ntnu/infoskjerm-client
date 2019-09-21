@@ -37,12 +37,12 @@ const SingleSignupEvent = ({ event }) => {
   } = event;
 
   return (
-    <div className="signup-wrapper" key={id}>
+    <div className="upcoming-wrapper" key={id}>
       <h1>{title}</h1>
       <div className={`title-line ${getTitleLineColor(eventType)}`} />
       <div className="start-time">
-        {dateToFormattedDate(startTime)}
-        |
+        {dateToFormattedDate(startTime)}   
+        |   
         {dateToFormattedTime(startTime)}
       </div>
       <div className="capacity">
