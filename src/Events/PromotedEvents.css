@@ -3,7 +3,6 @@
   flex-wrap: wrap;
   flex-direction: row;
   flex: auto;
-  
 }
 
 .split {
@@ -11,9 +10,14 @@
   width: 50%;
   position: fixed;
   z-index: -1;
-  top: 0;
-  overflow-x: hidden;
-  padding-top: 20px;
+}
+
+.marble-background {
+  background-image: url('https://c.pxhere.com/images/62/a9/cf517dde935244a48a9940bf2927-1580813.jpg!d');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 4px 4px white inset;
 }
 
 .left {
@@ -32,11 +36,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  white-space: nowrap;
+  white-space: pre-wrap;
 }
 
 .cover {
-  width: 500px;
+  width: 700px;
 }
 
 .event-text {
@@ -63,6 +67,9 @@
 }
 .title-line.red {
   background-color: #B11C11;
+}
+.title-line.red {
+  background-color: #8A2BE2;
 }
 
 @media screen and (max-width: 1080px) {

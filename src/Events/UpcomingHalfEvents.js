@@ -4,9 +4,9 @@ import './UpcomingEvents.css';
 
 const HalfSignupEvents = ({ events }) => (
   <div className="half-wrapper">
-    <UpcomingSingleEvent className="first" event={events[0]} />
-    <UpcomingSingleEvent className="second" event={events[1]} />
-    <UpcomingSingleEvent className="third" event={events[2]} />
+    <UpcomingSingleEvent event={events[0]} />
+    <UpcomingSingleEvent event={events[1]} />
+    <UpcomingSingleEvent event={events[2]} />
   </div>
 );
 

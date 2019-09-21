@@ -23,7 +23,7 @@ class UpcomingEventsComponent extends Component {
   }
 
   getBusinessEvents = (data) => {
-    const eventTypeList = ['company_presentation', 'course', 'KID_event', 'lunch_presentation'];
+    const eventTypeList = ['company_presentation', 'course', 'KID_event', 'lunch_presentation', 'alternative_presentation'];
     const list = data.filter(event => eventTypeList.includes(event.eventType));
     return (
       list.slice(0, 3)
@@ -43,13 +43,13 @@ class UpcomingEventsComponent extends Component {
     if (data[0]) {
       if (data[0].title) {
         return (
-          <div id="signup-wrapper">
+          <div>
             <div className="split left">
-              <h1>Neste Business</h1>
+              <h1 className="title">Bedriftsarrangement</h1>
               <UpcomingHalfEvents events={this.getBusinessEvents(data)} className="half" />
             </div>
             <div className="split right">
-              <h1>Neste sosialt</h1>
+              <h1 className="title">Sosialarrangement</h1>
               <UpcomingHalfEvents events={this.getPartyEvents(data)} className="half" />
             </div>
           </div>
@@ -57,7 +57,7 @@ class UpcomingEventsComponent extends Component {
       }
     }
     return (
-      <div id="signup-wrapper">
+      <div>
         <div className="split left">
           {/* <HalfSignupEvents events={this.getSignupEvents(data)} className="half" /> */}
         </div>

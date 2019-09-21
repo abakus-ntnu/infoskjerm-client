@@ -21,6 +21,7 @@ function getTitleLineColor(eventType) {
     party: 'yellow',
     event: 'red',
     other: 'black',
+    alternative_presentation: 'purple',
   };
   return eventNames[eventType];
 }
@@ -37,10 +38,12 @@ const SingleSignupEvent = ({ event }) => {
 
   return (
     <div className="signup-wrapper" key={id}>
-      <h1 className="title">{title}</h1>
+      <h1>{title}</h1>
       <div className={`title-line ${getTitleLineColor(eventType)}`} />
       <div className="start-time">
-        {dateToFormattedDate(startTime)} | {dateToFormattedTime(startTime)}
+        {dateToFormattedDate(startTime)}
+        |
+        {dateToFormattedTime(startTime)}
       </div>
       <div className="capacity">
         {getCapacity(totalCapacity, registrationCount)}
