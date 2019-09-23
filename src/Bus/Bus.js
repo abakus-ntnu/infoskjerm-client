@@ -21,7 +21,7 @@ class BusComponent extends Component {
   componentDidMount() {
     const { get } = this.props;
     get();
-    setInterval(()=> get(), 10000);
+    setInterval(() => get(), 10000);
   }
 
   renderList() {
@@ -30,15 +30,15 @@ class BusComponent extends Component {
       <div className="full-grid marble-background">
         <h1 id="bus-til-byen">Buss til byen</h1>
         <h2 id="bus-til-byen-fra-glos" className="stopTitle">Gløshaugen</h2>
-        <BusList departureList={data.to.gloshaugen} className="bus-list" id="til-byen-fra-glos" />
+        <BusList departureList={data.glos.to} className="bus-list" id="til-byen-fra-glos" />
         <h2 id="bus-til-byen-fra-prof" className="stopTitle">Hesthagen</h2>
-        <BusList departureList={data.from.gloshaugen} className="bus-list" id="fra-byen-til-glos" />
+        <BusList departureList={data.glos.from} className="bus-list" id="fra-byen-til-glos" />
 
         <h1 id="bus-fra-byen">Buss fra byen</h1>
         <h2 id="bus-til-glos-fra-byen" className="stopTitle">Gløshaugen</h2>
-        <BusList departureList={data.to.hesthagen} className="bus-list" id="til-byen-fra-prof" />
+        <BusList departureList={data.hest.to} className="bus-list" id="til-byen-fra-prof" />
         <h2 id="bus-til-prof-fra-byen" className="stopTitle">Hesthagen</h2>
-        <BusList departureList={data.from.hesthagen} className="bus-list" id="fra-byen-til-prof" />
+        <BusList departureList={data.hest.from} className="bus-list" id="fra-byen-til-prof" />
       </div>
     );
   }

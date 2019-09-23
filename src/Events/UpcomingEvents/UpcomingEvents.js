@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { func, arrayOf, object } from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchEvents } from '../store/modules/events';
+import { fetchEvents } from '../../store/modules/events';
 import UpcomingHalfEvents from './UpcomingHalfEvents';
 import './UpcomingEvents.css';
 

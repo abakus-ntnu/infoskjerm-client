@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { string } from 'prop-types';
 import './PromotedEvents.css';
-import { dateToFormattedDate, dateToFormattedTime } from '../components/Time/eventTime';
+import { dateToFormattedDate, dateToFormattedTime } from '../../components/Time/eventTime';
 
 function getCapacity(totalCapacity, registrationCount) {
   return (totalCapacity === 0 ? 'Ingen påmelding!' : `${registrationCount}/${totalCapacity} påmeldt`);
@@ -16,7 +16,7 @@ function getEventType(eventType) {
 
 function getTitleLineColor(eventType) {
   const eventNames = {
-    company_presentation: 'green', course: 'blue', KID_event: 'green', lunch_presentation: 'green', social: 'red', party: 'yellow', event: 'red',alternative_presentation:'purple', other: 'black',
+    company_presentation: 'green', course: 'blue', KID_event: 'green', lunch_presentation: 'green', social: 'red', party: 'yellow', event: 'red', alternative_presentation: 'purple', other: 'black',
   };
   return eventNames[eventType];
 }
@@ -47,7 +47,11 @@ const SinglePromotedEvent = ({ event }) => {
         {location}
       </div>
       <div className="event-text">
-        {dateToFormattedDate(startTime)} | {dateToFormattedTime(startTime)}
+        {dateToFormattedDate(startTime)}
+{' '}
+|
+{' '}
+{dateToFormattedTime(startTime)}
       </div>
       <div className="event-text">
         Påmelding åpner:
