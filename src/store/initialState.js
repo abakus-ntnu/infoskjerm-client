@@ -1,7 +1,7 @@
 const initialState = {
   bus: {
     loading: false,
-    data: { to: { glos: [], prof: [] }, from: { glos: [], prof: [] } },
+    data: { glos: { to: [], from: [] }, hest: { to: [], from: [] } },
     error: false,
   },
   events: {

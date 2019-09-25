@@ -1,34 +1,33 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
 import { string, bool } from 'prop-types';
 import './bus.css';
 
 
 class BusListItem extends Component {
   static propTypes = {
-    line: string.isRequired,
-    destination: string.isRequired,
-    timeUntilDeparture: string.isRequired,
-    isRealtimeData: bool.isRequired,
+    number: string.isRequired,
+    bus: string.isRequired,
+    time: string.isRequired,
+    realtime: bool.isRequired,
   }
 
   checkRealTime() {
-    const { isRealtimeData } = this.props;
-    if (isRealtimeData) {
-      return ("list-item-live");
+    const { realtime } = this.props;
+    if (realtime) {
+      return ('list-item live');
     }
-    return ("list-item");
+    return ('list-item');
   }
 
   render() {
     const {
-      line, destination, timeUntilDeparture,
+      number, bus, time,
     } = this.props;
     return (
       <div className={this.checkRealTime()} key={this.key}>
-        <span className="line">{line}</span>
-        <span className="destination">{destination}</span>
-        <span className="time-to-departure">{timeUntilDeparture}</span>
+        <span className="line">{number}</span>
+        <span className="destination">{bus}</span>
+        <span className="time-to-departure">{time}</span>
       </div>
     );
   }

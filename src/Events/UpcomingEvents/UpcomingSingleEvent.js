@@ -3,7 +3,7 @@ import './UpcomingEvents.css';
 import {
   dateToFormattedDate,
   dateToFormattedTime,
-} from '../components/Time/eventTime';
+} from '../../components/Time/eventTime';
 
 function getCapacity(totalCapacity, registrationCount) {
   return totalCapacity === 0
@@ -41,8 +41,8 @@ const SingleSignupEvent = ({ event }) => {
       <h1>{title}</h1>
       <div className={`title-line ${getTitleLineColor(eventType)}`} />
       <div className="start-time">
-        {dateToFormattedDate(startTime)}   
-        |   
+        {dateToFormattedDate(startTime)}
+        |
         {dateToFormattedTime(startTime)}
       </div>
       <div className="capacity">

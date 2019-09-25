@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { func, object, arrayOf } from 'prop-types';
-import { fetchEvents } from '../store/modules/events';
+import { fetchEvents } from '../../store/modules/events';
 import './Events.css';
-import PromotedEvents from './PromotedEvents';
+import PromotedEvents from '../PromotedEvents';
 
 // eventType = "social", "party", "event", "other"
 // "company_presentation", "course", "KID_event", "lunch_presentation"

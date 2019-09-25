@@ -3,7 +3,7 @@ import {
   string, number, func, object, arrayOf,
 } from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchEvents } from '../store/modules/events';
+import { fetchEvents } from '../../store/modules/events';
 import SinglePromotedEvent from './SinglePromotedEvent';
 import './PromotedEvents.css';
 

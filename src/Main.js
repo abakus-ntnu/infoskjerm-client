@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Time from './components/Time/index';
 import Bus from './Bus/Bus';
 import PromotedEvents from './Events/Events';
-import UpcomingEvents from './Events/UpcomingEvents';
+import UpcomingEvents from './Events/UpcomingEvents/UpcomingEvents';
 import Abakus from './components/Abakus';
 import { fetchNextComponent } from './store/modules/animation';
 
@@ -24,7 +24,7 @@ class MainComponent extends Component {
     get();
     setInterval(() => {
       get();
-    }, 10 * 1000);
+    }, 1000 * 1000);
   }
 
 
@@ -41,6 +41,7 @@ class MainComponent extends Component {
         return (<Bus />);
     }
   }
+
   render() {
     return (
       <>
