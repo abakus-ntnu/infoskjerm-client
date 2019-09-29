@@ -24,7 +24,7 @@ class MainComponent extends Component {
     get();
     setInterval(() => {
       get();
-    }, 1000 * 1000);
+    }, 10 * 1000);
   }
 
 
