@@ -39,10 +39,10 @@ class PromotedEventsComponent extends Component {
       if (eventList[0].title) {
         return (
           <div id="all-wrapper">
-            <div className="split left marble-background">
+            <div className="split left">
               <SinglePromotedEvent event={eventList[0]} className="promotedBusiness" />
             </div>
-            <div className="split right marble-background">
+            <div className="split right">
               <SinglePromotedEvent event={eventList[1]} className="promotedParty" />
             </div>
           </div>
