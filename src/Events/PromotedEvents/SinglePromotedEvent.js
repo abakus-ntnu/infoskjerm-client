@@ -48,10 +48,10 @@ const SinglePromotedEvent = ({ event }) => {
       </div>
       <div className="event-text">
         {dateToFormattedDate(startTime)}
-{' '}
+        {' '}
 |
-{' '}
-{dateToFormattedTime(startTime)}
+        {' '}
+        {dateToFormattedTime(startTime)}
       </div>
       <div className="event-text">
         Påmelding åpner:
