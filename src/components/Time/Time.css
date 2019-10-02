@@ -1,0 +1,21 @@
+#rectangular-shape {
+  width: 200px;
+  text-align: center;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 0;
+  margin-left: -100px;
+  font-family: Raleway,Helvetica Neue,Arial,sans-serif;
+}
+
+#time {
+  font-size: 50px;
+}
+
+#date {
+  font-size: 30px;
+}

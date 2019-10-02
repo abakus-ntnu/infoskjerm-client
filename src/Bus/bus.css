@@ -1,0 +1,111 @@
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/robotocondensed/v18/ieVl2ZhZI2eCN5jzbjEETS9weq8-19-7DQk6YvNkeg.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+
+.marble-background {
+  background-image: url('https://c.pxhere.com/images/62/a9/cf517dde935244a48a9940bf2927-1580813.jpg!d');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 4px 4px white inset;
+}
+
+#bus-til-byen{
+  grid-area: til-byen-header;
+  text-align: center;
+}
+
+#bus-fra-byen { 
+  grid-area: fra-byen-header;
+  text-align: center;
+}
+
+#bus-til-byen-fra-glos { 
+  grid-area: til-byen-fra-glos;
+  margin-left: 15px;
+}
+
+#bus-til-byen-fra-prof{ 
+  grid-area: til-byen-fra-prof;
+  margin-left: 15px;
+ }
+
+#bus-til-glos-fra-byen { 
+  grid-area: fra-byen-til-glos;
+  margin-left: 15px;
+ }
+
+#bus-til-prof-fra-byen{ 
+  grid-area: fra-byen-til-prof;
+  margin-left: 15px;
+ }
+
+#fra-byen-til-glos{ grid-area: tid-fra-byen-til-glos}
+#fra-byen-til-prof{ grid-area: tid-fra-byen-til-prof}
+#til-byen-fra-glos{ grid-area: tid-til-byen-fra-glos}
+#til-byen-fra-prof{ grid-area: tid-til-byen-fra-prof}
+
+.full-grid {
+  font-family: 'Roboto Condensed',Raleway,Helvetica Neue,Arial,sans-serif;
+  height: 98vh;
+  display: grid;
+  background-color: white;
+  font-size: 140%;
+  padding: 2px;
+  grid-gap: 2px 200px;
+  grid-template-areas:
+  'til-byen-header fra-byen-header'
+  'til-byen-fra-glos fra-byen-til-glos'
+  'tid-til-byen-fra-glos tid-til-byen-fra-glos'
+  'til-byen-fra-prof fra-byen-til-prof'
+  'tid-fra-byen-til-glos tid-til-byen-fra-prof';
+}
+
+.list-item{
+  margin-top: 1px;
+  background-color: #333E46;
+  height: 40px;
+  width: 97%;
+  opacity: 0.6;
+  display: flex;
+  padding: 5px;
+  justify-content: flex-end;
+  border-radius: 10px;
+}
+
+.list-item > span{
+  margin: 2px;
+  padding: 2px;
+  font-size: 25px;
+  text-align: left;
+  color: white;
+}
+
+.list-item, .live > span{
+  color: #FDD130;
+}
+
+.line{
+  margin-left:5px;
+  font-style: bold;
+  width: 10%;
+  text-align: centre;
+}
+
+.destination{
+  margin-left: 15px;
+  width: 50%;
+  text-align: centre;
+
+}
+
+.time-to-departure{
+  text-align: right;
+  width: 40%;
+  text-align: centre;
+
+}
