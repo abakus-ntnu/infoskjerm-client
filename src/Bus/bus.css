@@ -6,14 +6,6 @@
   unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
-.marble-background {
-  background-image: url('https://c.pxhere.com/images/62/a9/cf517dde935244a48a9940bf2927-1580813.jpg!d');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 0 0 4px 4px white inset;
-}
-
 #bus-til-byen{
   grid-area: til-byen-header;
   text-align: center;
@@ -53,7 +45,7 @@
   font-family: 'Roboto Condensed',Raleway,Helvetica Neue,Arial,sans-serif;
   height: 98vh;
   display: grid;
-  background-color: white;
+  background-color: #FFFFFF;
   font-size: 140%;
   padding: 2px;
   grid-gap: 2px 200px;

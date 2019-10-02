@@ -1,7 +1,7 @@
 .upcoming-wrapper {
   text-align: center;
   white-space: nowrap;
-  background-color:#ecf0f1;
+  background-color:#FFFFFF;
   margin: 20px;
   padding: 50px;
   border-radius: 10px;
@@ -26,22 +26,12 @@
   font-family: Raleway,Helvetica Neue,Arial,sans-serif;
 }
 
-.marble-background {
-  background-image: url('https://c.pxhere.com/images/62/a9/cf517dde935244a48a9940bf2927-1580813.jpg!d');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: 0 0 4px 4px white inset;
-}
-
 .left {
   left: 0;
-  background-color: gray;
 }
 
 .right {
   right: 0;
-  background-color: darkgray;
 }
 
 .title {
