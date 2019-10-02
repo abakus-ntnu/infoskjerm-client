@@ -15,14 +15,9 @@ const animationReducer = (state = initialState.animation, action = {}) => {
   }
 };
 
-export function nextComponent() {
-  return { type: NEXT_COMPONENT };
-}
 
 export function fetchNextComponent() {
-  return (dispatch) => {
-    dispatch(nextComponent());
-  };
+  return { type: NEXT_COMPONENT };
 }
 
 
