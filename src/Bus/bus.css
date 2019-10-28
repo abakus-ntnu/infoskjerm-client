@@ -27,21 +27,25 @@
 #bus-til-byen-fra-glos { 
   grid-area: til-byen-fra-glos;
   margin-left: 15px;
+  text-indent: 30px;
 }
 
 #bus-til-byen-fra-prof{ 
   grid-area: til-byen-fra-prof;
   margin-left: 15px;
+  text-indent: 30px;
  }
 
 #bus-til-glos-fra-byen { 
   grid-area: fra-byen-til-glos;
   margin-left: 15px;
+  text-indent: 30px;
  }
 
 #bus-til-prof-fra-byen{ 
   grid-area: fra-byen-til-prof;
   margin-left: 15px;
+  text-indent: 30px;
  }
 
 #fra-byen-til-glos{ grid-area: tid-fra-byen-til-glos}
@@ -73,7 +77,7 @@
   opacity: 0.6;
   display: flex;
   padding: 5px;
-  justify-content: flex-end;
+  justify-content: space-between;
   border-radius: 10px;
 }
 
@@ -81,7 +85,6 @@
   margin: 2px;
   padding: 2px;
   font-size: 25px;
-  text-align: left;
   color: white;
 }
 
@@ -93,19 +96,19 @@
   margin-left:5px;
   font-style: bold;
   width: 10%;
-  text-align: centre;
+  text-align: center;
 }
 
 .destination{
   margin-left: 15px;
   width: 50%;
-  text-align: centre;
+  text-align: center;
 
 }
 
 .time-to-departure{
   text-align: right;
   width: 40%;
-  text-align: centre;
+  text-align: center;
 
 }

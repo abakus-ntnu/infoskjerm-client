@@ -30,7 +30,7 @@ class MainComponent extends Component {
 
   renderComponent() {
     const { data } = this.props;
-    switch (data.currentComponent) {
+    switch ('bus') {
       case 'bus':
         return (<Bus />);
       case 'events':
