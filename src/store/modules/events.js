@@ -1,6 +1,8 @@
 import axios from 'axios';
 import initialState from '../initialState';
 
+import { getBaseUrl } from '../../utils';
+
 const FETCH_EVENTS_BEGIN = 'FETCH_EVENTS_BEGIN';
 const FETCH_EVENTS_SUCCESS = 'FETCH_EVENTS_SUCCESS';
 const FETCH_EVENTS_FAILURE = 'FETCH_EVENTS_FAILURE';
@@ -34,10 +36,11 @@ export function fetchEventsFailure(error) {
 }
 
 export function fetchEvents() {
+  const baseUrl = getBaseUrl();
   return (dispatch) => {
     dispatch(fetchEventsBegin());
     axios
-      .get('https://infoskjerm-api.koskom.no/events')
+      .get(`${baseUrl}events`)
       .then((response) => {
         dispatch(fetchEventsSuccess(response.data));
       })

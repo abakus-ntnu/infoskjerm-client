@@ -1,5 +1,6 @@
 import axios from 'axios';
 import initialState from '../initialState';
+import { getBaseUrl } from '../../utils';
 
 const FETCH_BUS_BEGIN = 'FETCH_BUS_BEGIN';
 const FETCH_BUS_SUCCESS = 'FETCH_BUS_SUCCESS';
@@ -35,9 +36,10 @@ export function fetchBusFailure(error) {
 
 
 export function fetchBus() {
+  const baseUrl = getBaseUrl();
   return (dispatch) => {
     dispatch(fetchBusBegin());
-    axios.get('https://infoskjerm-api.koskom.no/bus')
+    axios.get(`${baseUrl}bus`)
       .then((response) => {
         dispatch(fetchBusSuccess(response.data));
       })

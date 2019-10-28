@@ -6,7 +6,8 @@
   "scripts": {
     "build": "webpack --mode production --config webpack.config.js -p",
     "eslint": "eslint src/**/*.js",
-    "start": "webpack-dev-server --open --config webpack.config.js --port 8081",
+    "start": "cross-env NODE_ENV=production webpack-dev-server --open --config webpack.config.js --port 8081",
+    "start:local": "cross-env NODE_ENV=development webpack-dev-server --open --config webpack.config.js --port 8081",
     "test": "jest"
   },
   "keywords": [],
@@ -39,6 +40,8 @@
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "axios": "^0.19.0",
     "babel-polyfill": "^6.26.0",
+    "cross-env": "^6.0.3",
+    "dotenv": "^8.2.0",
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
