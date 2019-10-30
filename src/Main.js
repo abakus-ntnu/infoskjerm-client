@@ -7,6 +7,7 @@ import PromotedEvents from './Events/Events';
 import UpcomingEvents from './Events/UpcomingEvents/UpcomingEvents';
 import Abakus from './components/Abakus';
 import { fetchNextComponent } from './store/modules/animation';
+import './Main.css';
 
 class MainComponent extends Component {
   static propTypes = {
@@ -23,7 +24,7 @@ class MainComponent extends Component {
     const { get } = this.props;
     get();
     setInterval(() => {
-      get();
+      // get();
     }, 10 * 1000);
   }
 
@@ -44,13 +45,13 @@ class MainComponent extends Component {
 
   render() {
     return (
-      <>
-        <React.Fragment>
+      <div className="main">
+        {/* <React.Fragment>
           <Time displayTime />
-        </React.Fragment>
+        </React.Fragment> */}
         {this.renderComponent()}
-        <Abakus />
-      </>
+        {/* <Abakus /> */}
+      </div>
     );
   }
 }

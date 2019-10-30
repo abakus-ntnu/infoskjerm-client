@@ -17,10 +17,10 @@ class PromotedEventsComponent extends Component {
     const { events } = this.props;
     return (
       <div id="all-wrapper">
-        <div className="split left marble-background">
+        <div className="split left">
           <SinglePromotedEvent event={events[0]} className="promotedBusiness" />
         </div>
-        <div className="split right marble-background">
+        <div className="split right">
           <SinglePromotedEvent event={events[1]} className="promotedParty" />
         </div>
       </div>

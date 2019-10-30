@@ -36,10 +36,11 @@ const SinglePromotedEvent = ({ event }) => {
   return (
     <div id="promoted-event-wrapper" key={id}>
       <img className="cover" src={cover} alt="Cover" />
+      <div className={`title-line ${getTitleLineColor(eventType)}`} />
       <h1 className="title">
         {title}
       </h1>
-      <div className={`title-line ${getTitleLineColor(eventType)}`} />
+
       <div className="event-text">
         {getEventType(eventType)}
       </div>
