@@ -11,7 +11,7 @@ const initialState = {
   },
   animation: {
     components: ['bus', 'events', 'signup'],
-    currentIndex: 1,
+    currentIndex: 0,
     currentComponent: 'signup',
   },
 };

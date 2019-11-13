@@ -1,103 +1,64 @@
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/robotocondensed/v18/ieVl2ZhZI2eCN5jzbjEETS9weq8-19-7DQk6YvNkeg.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-
-#bus-til-byen{
-  grid-area: til-byen-header;
-  text-align: center;
-}
-
-#bus-fra-byen { 
-  grid-area: fra-byen-header;
-  text-align: center;
-}
-
-#bus-til-byen-fra-glos { 
-  grid-area: til-byen-fra-glos;
-  margin-left: 15px;
-}
-
-#bus-til-byen-fra-prof{ 
-  grid-area: til-byen-fra-prof;
-  margin-left: 15px;
- }
-
-#bus-til-glos-fra-byen { 
-  grid-area: fra-byen-til-glos;
-  margin-left: 15px;
- }
-
-#bus-til-prof-fra-byen{ 
-  grid-area: fra-byen-til-prof;
-  margin-left: 15px;
- }
-
-#fra-byen-til-glos{ grid-area: tid-fra-byen-til-glos}
-#fra-byen-til-prof{ grid-area: tid-fra-byen-til-prof}
-#til-byen-fra-glos{ grid-area: tid-til-byen-fra-glos}
-#til-byen-fra-prof{ grid-area: tid-til-byen-fra-prof}
-
 .full-grid {
-  font-family: 'Roboto Condensed',Raleway,Helvetica Neue,Arial,sans-serif;
-  height: 98vh;
+  height: 75vh;
   display: grid;
-  background-color: #FFFFFF;
-  font-size: 140%;
-  padding: 2px;
-  grid-gap: 2px 200px;
-  grid-template-areas:
-  'til-byen-header fra-byen-header'
-  'til-byen-fra-glos fra-byen-til-glos'
-  'tid-til-byen-fra-glos tid-til-byen-fra-glos'
-  'til-byen-fra-prof fra-byen-til-prof'
-  'tid-fra-byen-til-glos tid-til-byen-fra-prof';
+  margin: 0 5vw;
+  grid-gap: 5vw 5vw;
+  grid-template-columns: auto auto;
 }
 
-.list-item{
-  margin-top: 1px;
-  background-color: #333E46;
-  height: 40px;
-  width: 97%;
-  opacity: 0.6;
+.grid-item {
   display: flex;
-  padding: 5px;
-  justify-content: flex-end;
+  flex-direction: column;
+}
+
+.bus-list {
+  background-color: #262938;
   border-radius: 10px;
+  flex-grow: 3;
 }
 
-.list-item > span{
-  margin: 2px;
-  padding: 2px;
-  font-size: 25px;
-  text-align: left;
+.list-item {
+  height: 8vh;
   color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2vw;
+  margin: 0;
 }
 
-.list-item, .live > span{
-  color: #FDD130;
+.border-top {
+  border-top: 3px solid black;
 }
 
-.line{
-  margin-left:5px;
+.line {
+  margin-left: 5px;
   font-style: bold;
   width: 10%;
-  text-align: centre;
+  font-size: 59px;
 }
 
-.destination{
+.destination {
   margin-left: 15px;
-  width: 50%;
-  text-align: centre;
-
+  font-size: 37px;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
-.time-to-departure{
+.time-to-departure {
   text-align: right;
-  width: 40%;
-  text-align: centre;
+  font-size: 44px;
+  color: #ebd01c;
+  padding-left: 10px;
+}
 
+.stop-title {
+  color: white;
+  font-size: 55px;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.stop-title > span {
+  font-size: 35px;
 }
