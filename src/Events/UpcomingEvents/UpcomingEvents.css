@@ -1,7 +1,7 @@
 .upcoming-wrapper {
   text-align: center;
   white-space: nowrap;
-  background-color:#FFFFFF;
+  background-color: #ffffff;
   margin: 20px;
   padding: 50px;
   border-radius: 10px;
@@ -16,8 +16,6 @@
 .split {
   height: 100%;
   width: 50%;
-  position: fixed;
-  z-index: -1;
   top: 0;
   overflow-x: hidden;
   padding-top: 70px;
@@ -37,7 +35,7 @@
 }
 
 .title-line.green {
-  background-color: #A1C34A;
+  background-color: #a1c34a;
 }
 .title-line.yellow {
   background-color: rgb(252, 215, 72);
@@ -46,11 +44,11 @@
   background-color: #111;
 }
 .title-line.blue {
-  background-color: #52B0EC;
+  background-color: #52b0ec;
 }
 .title-line.red {
-  background-color: #B11C11;
+  background-color: #b11c11;
 }
 .title-line.purple {
-  background-color: rgb(138, 43, 226)
+  background-color: rgb(138, 43, 226);
 }

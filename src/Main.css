@@ -7,7 +7,9 @@
 }
 
 body {
-  background: url("../public/background.svg") no-repeat center bottom fixed;
+  font-family: "wf_SegoeUILight", "wf_SegoeUI", "Segoe UI Light",
+    "Segoe WP Light", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana",
+    "Arial", "sans-serif";
   background-size: cover;
   font-family: "wf_SegoeUILight", "wf_SegoeUI", "Segoe UI Light",
     "Segoe WP Light", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana",
@@ -18,6 +20,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  background-color: #263238;
 }
 
 div {
@@ -36,7 +39,7 @@ div {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: #263238cf;
+  background: url("../public/background.svg") no-repeat center bottom fixed;
   z-index: 0;
 }
 
