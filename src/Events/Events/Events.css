@@ -1,10 +1,7 @@
 #all-events-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  flex: 2 1 auto;
+  padding: 5vh;
 }
 
-#single-event-wrapper { 
+#single-event-wrapper {
   border: solid black 2px;
 }
