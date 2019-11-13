@@ -24,19 +24,19 @@ class MainComponent extends Component {
     const { get } = this.props;
     get();
     setInterval(() => {
-      // get();
+      get();
     }, 10 * 1000);
   }
 
 
   renderComponent() {
     const { data } = this.props;
-    switch (data.currentComponent) {
+    switch ('calendar') {
       case 'bus':
         return (<Bus />);
       case 'events':
         return (<PromotedEvents />);
-      case 'signup':
+      case 'calendar':
         return (<UpcomingEvents />);
       default:
         return (<Bus />);

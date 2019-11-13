@@ -10,7 +10,7 @@ const initialState = {
     error: false,
   },
   animation: {
-    components: ['bus', 'events', 'signup'],
+    components: ['bus', 'events', 'calendar'],
     currentIndex: 1,
     currentComponent: 'signup',
   },
