@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { string } from 'prop-types';
-import './PromotedEvents.css';
+import './PromotedEvents.scss';
 import { dateToFormattedDate, dateToFormattedTime } from '../../components/Time/eventTime';
 
 function getCapacity(totalCapacity, registrationCount) {
@@ -37,29 +37,31 @@ const SinglePromotedEvent = ({ event }) => {
     <div id="promoted-event-wrapper" key={id}>
       <img className="cover" src={cover} alt="Cover" />
       <div className={`title-line ${getTitleLineColor(eventType)}`} />
-      <h1 className="title">
-        {title}
-      </h1>
-
-      <div className="event-text">
-        {getEventType(eventType)}
-      </div>
-      <div className="event-text">
-        {location}
-      </div>
-      <div className="event-text">
-        {dateToFormattedDate(startTime)}
-        {' '}
-|
-        {' '}
-        {dateToFormattedTime(startTime)}
-      </div>
-      <div className="event-text">
+      <div className="text-wrapper">
+        <div className="event-text">
+          <h1 className="promoted-event-title">
+            {title.toUpperCase()}
+          </h1>
+        </div>
+        <div className="event-text medium-text-size">
+          {dateToFormattedDate(startTime)}
+          {'  '}
+          {dateToFormattedTime(startTime)}
+          { ' | ' }
+          {location}
+          { ' | ' }
+          {getEventType(eventType)}
+        </div>
+        <div className="event-text small-text-size">
         Påmelding åpner:
-        {' '}
-        {dateToFormattedDate(registrationTime)}
-        {' '}
-        {dateToFormattedTime(registrationTime)}
+          {' '}
+          <span className="red">
+            {dateToFormattedDate(registrationTime)}
+            {' '}
+            {dateToFormattedTime(registrationTime)}
+
+          </span>
+        </div>
       </div>
     </div>
   );
