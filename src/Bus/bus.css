@@ -1,65 +1,64 @@
-@font-face {
-  font-family: 'Roboto Condensed';
-  font-style: normal;
-  font-weight: 400;
-  src: url(https://fonts.gstatic.com/s/robotocondensed/v18/ieVl2ZhZI2eCN5jzbjEETS9weq8-19-7DQk6YvNkeg.woff2) format('woff2');
-  unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
-}
-
-#bus-til-byen{
+#bus-til-byen {
   grid-area: til-byen-header;
   text-align: center;
 }
 
-#bus-fra-byen { 
+#bus-fra-byen {
   grid-area: fra-byen-header;
   text-align: center;
 }
 
-#bus-til-byen-fra-glos { 
+#bus-til-byen-fra-glos {
   grid-area: til-byen-fra-glos;
   margin-left: 15px;
 }
 
-#bus-til-byen-fra-prof{ 
+#bus-til-byen-fra-prof {
   grid-area: til-byen-fra-prof;
   margin-left: 15px;
- }
+}
 
-#bus-til-glos-fra-byen { 
+#bus-til-glos-fra-byen {
   grid-area: fra-byen-til-glos;
   margin-left: 15px;
- }
+}
 
-#bus-til-prof-fra-byen{ 
+#bus-til-prof-fra-byen {
   grid-area: fra-byen-til-prof;
   margin-left: 15px;
- }
+}
 
-#fra-byen-til-glos{ grid-area: tid-fra-byen-til-glos}
-#fra-byen-til-prof{ grid-area: tid-fra-byen-til-prof}
-#til-byen-fra-glos{ grid-area: tid-til-byen-fra-glos}
-#til-byen-fra-prof{ grid-area: tid-til-byen-fra-prof}
+#fra-byen-til-glos {
+  grid-area: tid-fra-byen-til-glos;
+}
+#fra-byen-til-prof {
+  grid-area: tid-fra-byen-til-prof;
+}
+#til-byen-fra-glos {
+  grid-area: tid-til-byen-fra-glos;
+}
+#til-byen-fra-prof {
+  grid-area: tid-til-byen-fra-prof;
+}
 
 .full-grid {
-  font-family: 'Roboto Condensed',Raleway,Helvetica Neue,Arial,sans-serif;
   height: 98vh;
   display: grid;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   font-size: 140%;
   padding: 2px;
   grid-gap: 2px 200px;
   grid-template-areas:
-  'til-byen-header fra-byen-header'
-  'til-byen-fra-glos fra-byen-til-glos'
-  'tid-til-byen-fra-glos tid-til-byen-fra-glos'
-  'til-byen-fra-prof fra-byen-til-prof'
-  'tid-fra-byen-til-glos tid-til-byen-fra-prof';
+    "til-byen-header fra-byen-header"
+    "til-byen-fra-glos fra-byen-til-glos"
+    "tid-til-byen-fra-glos tid-til-byen-fra-glos"
+    "til-byen-fra-prof fra-byen-til-prof"
+    "tid-fra-byen-til-glos tid-til-byen-fra-prof";
 }
 
-.list-item{
+.list-item {
   margin-top: 1px;
-  background-color: #333E46;
+  background-color: #333e46;
   height: 40px;
   width: 97%;
   opacity: 0.6;
@@ -69,7 +68,7 @@
   border-radius: 10px;
 }
 
-.list-item > span{
+.list-item > span {
   margin: 2px;
   padding: 2px;
   font-size: 25px;
@@ -77,27 +76,26 @@
   color: white;
 }
 
-.list-item, .live > span{
-  color: #FDD130;
+.list-item,
+.live > span {
+  color: #fdd130;
 }
 
-.line{
-  margin-left:5px;
+.line {
+  margin-left: 5px;
   font-style: bold;
   width: 10%;
   text-align: centre;
 }
 
-.destination{
+.destination {
   margin-left: 15px;
   width: 50%;
   text-align: centre;
-
 }
 
-.time-to-departure{
+.time-to-departure {
   text-align: right;
   width: 40%;
   text-align: centre;
-
 }
