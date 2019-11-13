@@ -11,6 +11,9 @@ body {
     "Segoe WP Light", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana",
     "Arial", "sans-serif";
   background-size: cover;
+  font-family: "wf_SegoeUILight", "wf_SegoeUI", "Segoe UI Light",
+    "Segoe WP Light", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana",
+    "Arial", "sans-serif";
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -38,4 +41,13 @@ div {
   height: 100%;
   background: url("../public/background.svg") no-repeat center bottom fixed;
   z-index: 0;
+}
+
+.main-title {
+  color: white;
+  text-align: center;
+  height: 20vh;
+  margin: 0;
+  font-weight: 750;
+  font-size: 110px;
 }
