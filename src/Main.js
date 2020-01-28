@@ -12,44 +12,43 @@ import './Main.css';
 class MainComponent extends Component {
   static propTypes = {
     get: func,
-    data: shape(),
-  }
+    data: shape()
+  };
 
   static defaultProps = {
-    get: () => { },
-    data: [],
-  }
+    get: () => {},
+    data: []
+  };
 
   componentDidMount() {
     const { get } = this.props;
     get();
     setInterval(() => {
-      // get();
+      get();
     }, 10 * 1000);
   }
-
 
   renderComponent() {
     const { data } = this.props;
     switch (data.currentComponent) {
       case 'bus':
-        return (<Bus />);
+        return <Bus />;
       case 'events':
-        return (<PromotedEvents />);
+        return <PromotedEvents />;
       case 'signup':
-        return (<UpcomingEvents />);
+        return <UpcomingEvents />;
       default:
-        return (<Bus />);
+        return <Bus />;
     }
   }
 
   render() {
     return (
-      <div className="main">
+      <div className='main'>
         {/* <React.Fragment>
           <Time displayTime />
         </React.Fragment> */}
-        {this.renderComponent()}
+        { this.renderComponent() }
         {/* <Abakus /> */}
       </div>
     );
@@ -59,7 +58,7 @@ class MainComponent extends Component {
 const mapStateToProps = state => ({ data: state.animation });
 
 const mapDispatchToProps = dispatch => ({
-  get: () => dispatch(fetchNextComponent()),
+  get: () => dispatch(fetchNextComponent())
 });
 
 const Main = connect(mapStateToProps, mapDispatchToProps)(MainComponent);

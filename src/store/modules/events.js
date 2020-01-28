@@ -5,7 +5,6 @@ const FETCH_EVENTS_BEGIN = 'FETCH_EVENTS_BEGIN';
 const FETCH_EVENTS_SUCCESS = 'FETCH_EVENTS_SUCCESS';
 const FETCH_EVENTS_FAILURE = 'FETCH_EVENTS_FAILURE';
 
-
 const eventsReducer = (state = initialState.events, action = {}) => {
   switch (action.type) {
     case FETCH_EVENTS_BEGIN:
@@ -34,14 +33,14 @@ export function fetchEventsFailure(error) {
 }
 
 export function fetchEvents() {
-  return (dispatch) => {
+  return dispatch => {
     dispatch(fetchEventsBegin());
     axios
-      .get('https://infoskjerm-api.koskom.no/events')
-      .then((response) => {
+      .get('https://infoskjerm-api.jowies.com/events')
+      .then(response => {
         dispatch(fetchEventsSuccess(response.data));
       })
-      .catch((error) => {
+      .catch(error => {
         dispatch(fetchEventsFailure(error));
       });
   };
