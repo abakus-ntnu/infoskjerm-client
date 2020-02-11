@@ -41,8 +41,8 @@ const SingleSignupEvent = ({ event }) => {
       className={`upcoming-wrapper border-${getTitleLineColor(eventType)}`}
       key={id}
     >
-      <h1>{title}</h1>
-      <div className="start-time">
+      <h1 className="event-title">{title}</h1>
+      <div className="event-information">
         {dateToFormattedDate(startTime)} {dateToFormattedTime(startTime)} |{" "}
         {getCapacity(totalCapacity, registrationCount)}
       </div>

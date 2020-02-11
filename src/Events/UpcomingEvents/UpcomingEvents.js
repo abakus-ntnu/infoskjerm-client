@@ -51,7 +51,7 @@ class UpcomingEventsComponent extends Component {
                 <UpcomingHalfEvents
                   events={this.getBusinessEvents(data)}
                   className="half"
-                  title={"Bedriftsarrangement"}
+                  title={"Bedriftspresentasjon & Kurs"}
                 />
               </div>
               <div className="split right">

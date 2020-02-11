@@ -45,12 +45,14 @@ class MainComponent extends Component {
   render() {
     return (
       <div className="main">
-        <UpcomingEvents />;
-        {/* <React.Fragment>
+        <div className="wrapper">
+          <UpcomingEvents />;
+          {/* <React.Fragment>
           <Time displayTime />
         </React.Fragment> */}
-        {/* this.renderComponent() */}
-        {/* <Abakus /> */}
+          {/* this.renderComponent() */}
+          {/* <Abakus /> */}
+        </div>
       </div>
     );
   }
