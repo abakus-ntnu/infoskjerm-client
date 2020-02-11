@@ -48,18 +48,17 @@ class UpcomingEventsComponent extends Component {
             <p className="main-title">KALENDER</p>
             <div className="signup-wrapper">
               <div className="split left">
-                <h1 className="title">Bedriftsarrangement</h1>
-
                 <UpcomingHalfEvents
                   events={this.getBusinessEvents(data)}
                   className="half"
+                  title={"Bedriftsarrangement"}
                 />
               </div>
               <div className="split right">
-                <h1 className="title">Sosialarrangement</h1>
                 <UpcomingHalfEvents
                   events={this.getPartyEvents(data)}
                   className="half"
+                  title={"Sosialarrangement"}
                 />
               </div>
             </div>

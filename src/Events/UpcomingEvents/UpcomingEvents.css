@@ -4,7 +4,7 @@
   background-color: #ffffff;
   margin: 20px;
   padding: 10px;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 14px 14px;
   box-shadow: 0px 5px 20px rgb(71, 71, 71);
 }
 
@@ -37,23 +37,24 @@
 .title {
   font-size: 270%;
   color: white;
+  text-align: left;
 }
 
-.title-line.green {
-  background-color: #a1c34a;
+.border-green {
+  border-top: 5px solid #a1c34a;
 }
-.title-line.yellow {
-  background-color: rgb(252, 215, 72);
+.border-yellow {
+  border-top: 5px solid rgb(252, 215, 72);
 }
-.title-line.black {
-  background-color: #111;
+.border-black {
+  border-top: 5px solid#111;
 }
-.title-line.blue {
-  background-color: #52b0ec;
+.border-blue {
+  border-top: 5px solid#52b0ec;
 }
-.title-line.red {
-  background-color: #b11c11;
+.border-red {
+  border-top: 5px solid #b11c11;
 }
-.title-line.purple {
-  background-color: rgb(138, 43, 226);
+.border-purple {
+  border-top: 5px solid rgb(138, 43, 226);
 }
