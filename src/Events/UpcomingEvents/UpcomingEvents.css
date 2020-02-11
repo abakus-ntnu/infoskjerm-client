@@ -3,14 +3,18 @@
   white-space: nowrap;
   background-color: #ffffff;
   margin: 20px;
-  padding: 50px;
-  border-radius: 10px;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
   box-shadow: 0px 5px 20px rgb(71, 71, 71);
 }
 
 .upcoming-wrapper div {
   font-size: 1.3em;
   white-space: pre;
+}
+
+.signup-wrapper {
+  display: flex;
 }
 
 .split {
@@ -32,6 +36,7 @@
 
 .title {
   font-size: 270%;
+  color: white;
 }
 
 .title-line.green {

@@ -1,6 +1,6 @@
-import React from 'react';
-import UpcomingSingleEvent from './UpcomingSingleEvent';
-import './UpcomingEvents.css';
+import React from "react";
+import UpcomingSingleEvent from "./UpcomingSingleEvent";
+import "./UpcomingEvents.css";
 
 const HalfSignupEvents = ({ events }) => (
   <div className="half-wrapper">
@@ -9,6 +9,5 @@ const HalfSignupEvents = ({ events }) => (
     <UpcomingSingleEvent event={events[2]} />
   </div>
 );
-
 
 export default HalfSignupEvents;
