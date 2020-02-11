@@ -2,9 +2,9 @@
   text-align: center;
   white-space: nowrap;
   background-color: #ffffff;
-  margin: 20px;
-  padding: 50px;
-  border-radius: 10px;
+  margin: 40px 0;
+  padding: 10px;
+  border-radius: 0 0 14px 14px;
   box-shadow: 0px 5px 20px rgb(71, 71, 71);
 }
 
@@ -13,12 +13,15 @@
   white-space: pre;
 }
 
+.signup-wrapper {
+  display: flex;
+}
+
 .split {
   height: 100%;
   width: 50%;
   top: 0;
   overflow-x: hidden;
-  padding-top: 70px;
   text-align: center;
 }
 
@@ -31,24 +34,37 @@
 }
 
 .title {
-  font-size: 270%;
+  font-size: 2.3em;
+  color: white;
+  text-align: left;
+  margin: 0;
 }
 
-.title-line.green {
-  background-color: #a1c34a;
+.event-title {
+  text-transform: uppercase;
+  font-size: 2.5em;
 }
-.title-line.yellow {
-  background-color: rgb(252, 215, 72);
+
+.event-title,
+.event-information {
+  margin: 20px;
 }
-.title-line.black {
-  background-color: #111;
+
+.border-green {
+  border-top: 5px solid #a1c34a;
 }
-.title-line.blue {
-  background-color: #52b0ec;
+.border-yellow {
+  border-top: 5px solid rgb(252, 215, 72);
 }
-.title-line.red {
-  background-color: #b11c11;
+.border-black {
+  border-top: 5px solid#111;
 }
-.title-line.purple {
-  background-color: rgb(138, 43, 226);
+.border-blue {
+  border-top: 5px solid#52b0ec;
+}
+.border-red {
+  border-top: 5px solid #b11c11;
+}
+.border-purple {
+  border-top: 5px solid rgb(138, 43, 226);
 }
