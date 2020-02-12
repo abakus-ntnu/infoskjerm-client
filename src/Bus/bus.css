@@ -12,14 +12,14 @@
 }
 
 .bus-list {
-  background-color: #262938;
+  background-color: white;
   border-radius: 10px;
   flex-grow: 3;
 }
 
 .list-item {
   height: 8vh;
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;

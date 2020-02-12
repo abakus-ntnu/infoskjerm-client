@@ -29,6 +29,8 @@ class MainComponent extends Component {
   }
 
   renderComponent() {
+    return <PromotedEvents />;
+
     const { data } = this.props;
     switch (data.currentComponent) {
       case "bus":
@@ -46,11 +48,10 @@ class MainComponent extends Component {
     return (
       <div className="main">
         <div className="wrapper">
-          <UpcomingEvents />;
           {/* <React.Fragment>
           <Time displayTime />
         </React.Fragment> */}
-          {/* this.renderComponent() */}
+          {this.renderComponent()}
           {/* <Abakus /> */}
         </div>
       </div>
