@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import { object, arrayOf } from 'prop-types';
-import SinglePromotedEvent from './SinglePromotedEvent';
-import './PromotedEvents.css';
+import React, { Component } from "react";
+import { object, arrayOf } from "prop-types";
+import SinglePromotedEvent from "./SinglePromotedEvent";
+import "./PromotedEvents.scss";
 
 class PromotedEventsComponent extends Component {
   static propTypes = {
-    events: arrayOf(object),
-  }
+    events: arrayOf(object)
+  };
 
   static defaultProps = {
-    events: [],
-  }
-
+    events: []
+  };
 
   renderEvent() {
     const { events } = this.props;
@@ -27,15 +26,14 @@ class PromotedEventsComponent extends Component {
     );
   }
 
-
   render() {
     return (
-      <div id="promoted-party-event">
+      <div className="promoted-wrapper">
+        <div className="main-title">PÅMELDINGER</div>
         {this.renderEvent()}
       </div>
     );
   }
 }
-
 
 export default PromotedEventsComponent;

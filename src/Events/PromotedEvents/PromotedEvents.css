@@ -3,7 +3,6 @@
   flex-wrap: wrap;
   flex-direction: row;
   flex: auto;
-  background-color: #ffffff;
 }
 
 .split {
@@ -13,27 +12,35 @@
   z-index: -1;
 }
 
+.marble-background {
+  background-image: url('https://c.pxhere.com/images/62/a9/cf517dde935244a48a9940bf2927-1580813.jpg!d');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: 0 0 4px 4px white inset;
+}
+
 .left {
   left: 0;
+  background-color: gray;
 }
 
 .right {
   right: 0;
+  background-color: darkgray;
 }
 
 #promoted-event-wrapper {
   position: absolute;
   top: 50%;
   left: 50%;
-  background-color: white;
-  border-radius: 8px;
   transform: translate(-50%, -50%);
   text-align: center;
   white-space: pre-wrap;
 }
 
 .cover {
-  height: 210px;
+  width: 700px;
 }
 
 .event-text {
@@ -42,15 +49,12 @@
 }
 
 .title-line {
-  height: 4px;
-  z-index: 1000;
-  position: relative;
-  top: -6px;
+  height: 2px;
   margin-bottom: 25px;
 }
 
 .title-line.green {
-  background-color: #a1c34a;
+  background-color: #A1C34A;
 }
 .title-line.yellow {
   background-color: rgb(252, 215, 72);
@@ -59,13 +63,13 @@
   background-color: #111;
 }
 .title-line.blue {
-  background-color: #52b0ec;
+  background-color: #52B0EC;
 }
 .title-line.red {
-  background-color: #b11c11;
+  background-color: #B11C11;
 }
 .title-line.red {
-  background-color: #8a2be2;
+  background-color: #8A2BE2;
 }
 
 @media screen and (max-width: 1080px) {
@@ -80,14 +84,15 @@
   }
 }
 
-@media screen and (max-width: 720px) {
-  .cover {
-    width: 200px;
-  }
-  .title {
-    font-size: 1.3em;
-  }
-  .event-text {
-    font-size: 0.8em;
-  }
+  @media screen and (max-width: 720px) {
+    .cover {
+      width: 200px;
+    }
+    .title {
+      font-size: 1.3em;
+    }
+    .event-text {
+      font-size: 0.8em;
+    }
+
 }

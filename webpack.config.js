@@ -37,9 +37,9 @@ module.exports = {
     },
     {
       test: /\.svg$/,
-      use: "file-loader",
+      use: 'file-loader',
     },
-  ],
+    ],
   },
   plugins: [
     new CleanWebpackPlugin(['dist']),
