@@ -46,18 +46,16 @@ class UpcomingEventsComponent extends Component {
         return (
           <div>
             <p className="main-title">KALENDER</p>
-            <div className="signup-wrapper">
+            <div className="upcoming-wrapper">
               <div className="split left">
                 <UpcomingHalfEvents
                   events={this.getBusinessEvents(data)}
-                  className="half"
                   title={"Bedriftspresentasjon & Kurs"}
                 />
               </div>
               <div className="split right">
                 <UpcomingHalfEvents
                   events={this.getPartyEvents(data)}
-                  className="half"
                   title={"Sosialarrangement"}
                 />
               </div>

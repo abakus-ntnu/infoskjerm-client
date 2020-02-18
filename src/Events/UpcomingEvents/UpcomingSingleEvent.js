@@ -38,7 +38,7 @@ const SingleSignupEvent = ({ event }) => {
 
   return (
     <div
-      className={`upcoming-wrapper border-${getTitleLineColor(eventType)}`}
+      className={`single-event-wrapper border-${getTitleLineColor(eventType)}`}
       key={id}
     >
       <h1 className="event-title">{title}</h1>

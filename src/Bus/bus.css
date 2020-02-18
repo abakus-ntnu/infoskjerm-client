@@ -1,8 +1,9 @@
+/* Styling for Bus */
+
 .full-grid {
-  height: 75vh;
   display: grid;
-  margin: 0 5vw;
-  grid-gap: 5vw 5vw;
+  padding: 0 2.5vw;
+  grid-gap: 5vh 5vw;
   grid-template-columns: auto auto;
 }
 
@@ -12,14 +13,27 @@
 }
 
 .bus-list {
-  background-color: #262938;
-  border-radius: 10px;
+  background-color: white;
+  border-radius: 14px;
   flex-grow: 3;
 }
 
+.stop-title {
+  color: white;
+  font-size: 50px;
+  margin: 0 0 5px 0;
+  flex-grow: 1;
+}
+
+.stop-title > span {
+  font-size: 35px;
+}
+
+/* Styling for BusListItem */
+
 .list-item {
   height: 8vh;
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,37 +42,34 @@
 }
 
 .border-top {
-  border-top: 3px solid black;
+  border-top: 2px solid #707070;
+}
+
+.left-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: left;
 }
 
 .line {
-  margin-left: 5px;
+  margin-right: 15px;
   font-style: bold;
-  width: 10%;
-  font-size: 59px;
+  font-size: 50px;
+  text-align: center;
+  min-width: 50px;
 }
 
 .destination {
-  margin-left: 15px;
-  font-size: 37px;
+  margin-left: 5px;
+  font-size: 30px;
   white-space: nowrap;
   overflow: hidden;
 }
 
 .time-to-departure {
   text-align: right;
-  font-size: 44px;
-  color: #ebd01c;
+  font-size: 40px;
+  color: #01579b;
   padding-left: 10px;
-}
-
-.stop-title {
-  color: white;
-  font-size: 55px;
-  margin: 0;
-  flex-grow: 1;
-}
-
-.stop-title > span {
-  font-size: 35px;
 }

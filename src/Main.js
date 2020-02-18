@@ -46,11 +46,10 @@ class MainComponent extends Component {
     return (
       <div className="main">
         <div className="wrapper">
-          <UpcomingEvents />;
           {/* <React.Fragment>
           <Time displayTime />
         </React.Fragment> */}
-          {/* this.renderComponent() */}
+          {this.renderComponent()}
           {/* <Abakus /> */}
         </div>
       </div>

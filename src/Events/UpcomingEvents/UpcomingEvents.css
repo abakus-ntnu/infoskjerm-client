@@ -1,19 +1,6 @@
+/* Styling for UpcomingEvents */
+
 .upcoming-wrapper {
-  text-align: center;
-  white-space: nowrap;
-  background-color: #ffffff;
-  margin: 40px 0;
-  padding: 10px;
-  border-radius: 0 0 14px 14px;
-  box-shadow: 0px 5px 20px rgb(71, 71, 71);
-}
-
-.upcoming-wrapper div {
-  font-size: 1.3em;
-  white-space: pre;
-}
-
-.signup-wrapper {
   display: flex;
 }
 
@@ -25,13 +12,7 @@
   text-align: center;
 }
 
-.left {
-  left: 0;
-}
-
-.right {
-  right: 0;
-}
+/* Styling for UpcomingHalfEvents */
 
 .title {
   font-size: 2.3em;
@@ -40,9 +21,32 @@
   margin: 0;
 }
 
+/* Styling for UpcomingSingleEvent */
+
+.single-event-wrapper {
+  text-align: center;
+  white-space: nowrap;
+  background-color: #ffffff;
+  margin: 2vw 0;
+  padding: 7px;
+  border-radius: 14px;
+}
+
+.single-event-wrapper div {
+  white-space: pre;
+}
+
 .event-title {
   text-transform: uppercase;
-  font-size: 2.5em;
+  font-size: 2.8em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.event-information {
+  color: #707070;
+  font-size: 1.6em;
 }
 
 .event-title,
