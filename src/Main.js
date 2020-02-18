@@ -49,8 +49,7 @@ class MainComponent extends Component {
           {/* <React.Fragment>
           <Time displayTime />
         </React.Fragment> */}
-          {<Bus />}
-          {/*this.renderComponent()*/}
+          {this.renderComponent()}
           {/* <Abakus /> */}
         </div>
       </div>
