@@ -33,6 +33,7 @@ class BusComponent extends Component {
         <div className="full-grid">
           <div className="grid-item">
             <p className="stop-title">
+              {console.log(data)}
               Gløshaugen <span>til sentrum</span>
             </p>
             <div className="bus-list">
@@ -44,7 +45,7 @@ class BusComponent extends Component {
               Hesthagen <span>til sentrum</span>
             </p>
             <div className="bus-list">
-              <BusList departureList={data.glos.from} />
+              <BusList departureList={data.hest.to} />
             </div>
           </div>
           <div className="grid-item">
@@ -52,7 +53,7 @@ class BusComponent extends Component {
               Gløshaugen <span>fra sentrum</span>
             </p>
             <div className="bus-list">
-              <BusList departureList={data.hest.to} />
+              <BusList departureList={data.glos.from} />
             </div>
           </div>
           <div className="grid-item">
