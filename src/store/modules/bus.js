@@ -37,7 +37,7 @@ export function fetchBusFailure(error) {
 export function fetchBus() {
   return (dispatch) => {
     dispatch(fetchBusBegin());
-    axios.get('https://infoskjerm-api.koskom.no/bus')
+    axios.get('https://infoskjerm-api.jowies.com/bus')
       .then((response) => {
         dispatch(fetchBusSuccess(response.data));
       })

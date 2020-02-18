@@ -1,61 +1,26 @@
-import React, { Component } from 'react';
-import {
-  string, number, func, object, arrayOf,
-} from 'prop-types';
-import { connect } from 'react-redux';
-import { fetchEvents } from '../../store/modules/events';
-import SinglePromotedEvent from './SinglePromotedEvent';
-import './PromotedEvents.css';
-
+import React, { Component } from "react";
+import { object, arrayOf } from "prop-types";
+import SinglePromotedEvent from "./SinglePromotedEvent";
+import "./PromotedEvents.scss";
 
 class PromotedEventsComponent extends Component {
   static propTypes = {
-    get: func,
-    data: arrayOf(object),
-  }
+    events: arrayOf(object)
+  };
 
   static defaultProps = {
-    get: () => {},
-    data: [],
-  }
-
-  componentDidMount() {
-    const { get } = this.props;
-    get();
-  }
-
-  getSignupEvents = (data) => {
-    const today = new Date().toJSON();
-    const list = data.filter(event => event.registrationTime && event.registrationTime > today)
-      .sort((a, b) => (a.time < b.time ? -1 : 1));
-    return list.slice(0, 2);
-  }
+    events: []
+  };
 
   renderEvent() {
-    const { data } = this.props;
-    const eventList = this.getSignupEvents(data);
-    console.log(data);
-    if (eventList[0]) {
-      if (eventList[0].title) {
-        return (
-          <div id="all-wrapper">
-            <div className="split left marble-background">
-              <SinglePromotedEvent event={eventList[0]} className="promotedBusiness" />
-            </div>
-            <div className="split right marble-background">
-              <SinglePromotedEvent event={eventList[1]} className="promotedParty" />
-            </div>
-          </div>
-        );
-      }
-    }
+    const { events } = this.props;
     return (
       <div id="all-wrapper">
         <div className="split left">
-          {/* <SinglePromotedEvent event={business} className="promotedBusiness" /> */}
+          <SinglePromotedEvent event={events[0]} className="promotedBusiness" />
         </div>
         <div className="split right">
-          {/* <SinglePromotedEvent event={party} className="promotedParty" /> */}
+          <SinglePromotedEvent event={events[1]} className="promotedParty" />
         </div>
       </div>
     );
@@ -63,20 +28,12 @@ class PromotedEventsComponent extends Component {
 
   render() {
     return (
-      <div id="promoted-party-event">
+      <div className="promoted-wrapper">
+        <div className="main-title">PÅMELDINGER</div>
         {this.renderEvent()}
       </div>
     );
   }
 }
 
-
-const mapStateToProps = state => ({ data: state.events.data });
-
-const mapDispatchToProps = dispatch => ({
-  get: () => dispatch(fetchEvents()),
-});
-
-const PromotedEvents = connect(mapStateToProps, mapDispatchToProps)(PromotedEventsComponent);
-
-export default PromotedEvents;
+export default PromotedEventsComponent;

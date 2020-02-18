@@ -7,5 +7,51 @@
 }
 
 body {
-  background-image: url('../marble-background.jpg')
+  font-family: "wf_SegoeUILight", "wf_SegoeUI", "Segoe UI Light",
+    "Segoe WP Light", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana",
+    "Arial", "sans-serif";
+  background-size: cover;
+  font-family: "wf_SegoeUILight", "wf_SegoeUI", "Segoe UI Light",
+    "Segoe WP Light", "Segoe UI", "Segoe", "Segoe WP", "Tahoma", "Verdana",
+    "Arial", "sans-serif";
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background-color: #03080f;
+}
+
+div {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  /* background: url("../public/background.svg") no-repeat center bottom fixed;*/
+  z-index: 0;
+}
+
+.wrapper {
+  margin: 40px;
+}
+
+.main-title {
+  color: white;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 90px;
+  margin: 0;
+  height: 20vh;
 }
