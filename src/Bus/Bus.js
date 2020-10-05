@@ -33,7 +33,6 @@ class BusComponent extends Component {
         <div className="full-grid">
           <div className="grid-item">
             <p className="stop-title">
-              {console.log(data)}
               Gløshaugen
               {' '}
               <span>til sentrum</span>
