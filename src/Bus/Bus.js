@@ -1,22 +1,22 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { func, shape } from "prop-types";
-import BusList from "./BusList";
-import { fetchBus } from "../store/modules/bus";
-import "./bus.css";
-import "./../Main.css";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { func, shape } from 'prop-types';
+import BusList from './BusList';
+import { fetchBus } from '../store/modules/bus';
+import './bus.css';
+import '../Main.css';
 
-//TODO; only get three bustimes in eg data.glos.to
+// TODO; only get three bustimes in eg data.glos.to
 
 class BusComponent extends Component {
   static propTypes = {
     get: func,
-    data: shape()
+    data: shape(),
   };
 
   static defaultProps = {
     get: () => {},
-    data: []
+    data: [],
   };
 
   componentDidMount() {
@@ -34,7 +34,9 @@ class BusComponent extends Component {
           <div className="grid-item">
             <p className="stop-title">
               {console.log(data)}
-              Gløshaugen <span>til sentrum</span>
+              Gløshaugen
+              {' '}
+              <span>til sentrum</span>
             </p>
             <div className="bus-list">
               <BusList departureList={data.glos.to} />
@@ -42,7 +44,9 @@ class BusComponent extends Component {
           </div>
           <div className="grid-item">
             <p className="stop-title">
-              Hesthagen <span>til sentrum</span>
+              Hesthagen
+              {' '}
+              <span>til sentrum</span>
             </p>
             <div className="bus-list">
               <BusList departureList={data.hest.to} />
@@ -50,7 +54,9 @@ class BusComponent extends Component {
           </div>
           <div className="grid-item">
             <p className="stop-title">
-              Gløshaugen <span>fra sentrum</span>
+              Gløshaugen
+              {' '}
+              <span>fra sentrum</span>
             </p>
             <div className="bus-list">
               <BusList departureList={data.glos.from} />
@@ -58,7 +64,9 @@ class BusComponent extends Component {
           </div>
           <div className="grid-item">
             <p className="stop-title">
-              Hesthagen <span>fra sentrum</span>
+              Hesthagen
+              {' '}
+              <span>fra sentrum</span>
             </p>
             <div className="bus-list">
               <BusList departureList={data.hest.from} />
@@ -80,7 +88,7 @@ const mapDispatchToProps = dispatch => ({ get: () => dispatch(fetchBus()) });
 
 const Bus = connect(
   mapStateToProps,
-  mapDispatchToProps
+  mapDispatchToProps,
 )(BusComponent);
 
 export default Bus;

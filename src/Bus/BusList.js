@@ -1,7 +1,7 @@
-import React from "react";
-import { object, arrayOf } from "prop-types";
-import BusListItem from "./BusListItem";
-import "./bus.css";
+import React from 'react';
+import { object, arrayOf } from 'prop-types';
+import BusListItem from './BusListItem';
+import './bus.css';
 
 const BusList = ({ departureList = [] }) => (
   <div>
@@ -19,7 +19,7 @@ const BusList = ({ departureList = [] }) => (
 );
 
 BusList.propTypes = {
-  departureList: arrayOf(object).isRequired
+  departureList: arrayOf(object).isRequired,
 };
 
 export default BusList;
