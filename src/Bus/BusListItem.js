@@ -8,7 +8,6 @@ class BusListItem extends Component {
     bus: string.isRequired,
     time: string.isRequired,
     realtime: bool.isRequired,
-    index: int,
   };
 
   render() {
