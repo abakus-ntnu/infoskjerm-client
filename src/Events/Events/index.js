@@ -28,7 +28,7 @@ class EventsComponent extends Component {
   getSignupEvents = (data) => {
     const today = new Date().toJSON();
     const list = data.filter(event => event.registrationTime && event.registrationTime > today)
-      .sort((a, b) => (a.time < b.time ? -1 : 1));
+      .sort((a, b) => (a.registrationTime < b.registrationTime ? -1 : 1));
     return list.slice(0, 2);
   }
 
