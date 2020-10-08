@@ -21,14 +21,14 @@ class EventsComponent extends Component {
   }
 
   getBusinessEvents(data) {
-    const list = data.filter(event => event.eventType == 'company_presentation' || event.eventType == 'course' || event.eventType == 'KID_event' || event.eventType == 'lunch_presentation');
+    const list = data.filter(event => event.eventType === 'company_presentation' || event.eventType === 'course' || event.eventType === 'KID_event' || event.eventType === 'lunch_presentation');
     return (
       list.slice(0, 4)
     );
   }
 
   getPartyEvents(data) {
-    const list = data.filter(event => event.eventType == 'social' || event.eventType == 'party' || event.eventType == 'event' || event.eventType == 'other');
+    const list = data.filter(event => event.eventType === 'social' || event.eventType === 'party' || event.eventType === 'event' || event.eventType === 'other');
     return (
       list.slice(0, 2)
     );
@@ -38,19 +38,6 @@ class EventsComponent extends Component {
     const { get } = this.props;
     get();
   }
-
-  /*
-  renderList() {
-    const { data } = this.props;
-    return data.map(event => (
-      <div id="single-event-wrapper" key={event.id}>
-        <h3>{event.title}</h3>
-        <h4>{event.description}</h4>
-        <img src={event.cover} width="300" height="120" alt="Cover" />
-      </div>
-    ));
-  }
-  */
 
   renderList() {
     const { data } = this.props;
